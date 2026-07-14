@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --color-brand-blue: #1e40af;
+  --color-brand-emerald: #10b981;
+}
+
+body {
+  font-family: var(--font-sans);
+}
