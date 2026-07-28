@@ -7,6 +7,9 @@ import { WhatsAppButton } from "./WhatsAppButton";
 import { SITE } from "@/lib/site";
 
 const AREAS = [
+  { href: "/patel-nagar-rajinder-nagar", label: "Patel Nagar & Rajinder Nagar" },
+  { href: "/anand-parbat-karol-bagh", label: "Anand Parbat & Karol Bagh" },
+  { href: "/inderlok-shastri-nagar", label: "Inderlok & Shastri Nagar" },
   { href: "/karol-bagh", label: "Karol Bagh" },
   { href: "/kirti-nagar", label: "Kirti Nagar" },
   { href: "/moti-nagar", label: "Moti Nagar" },

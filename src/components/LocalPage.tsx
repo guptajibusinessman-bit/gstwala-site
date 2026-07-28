@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { AreaContent } from "@/lib/content/areas";
 import { AREA_IMAGES } from "@/lib/images";
 import { SITE } from "@/lib/site";
@@ -9,6 +10,31 @@ import { FAQ } from "./FAQ";
 import { JsonLd } from "./JsonLd";
 import { ProcessSteps } from "./ProcessSteps";
 import { WhatsAppButton } from "./WhatsAppButton";
+
+/** Map popular service labels → existing service routes (internal SEO links) */
+const SERVICE_HREFS: Record<string, string> = {
+  "GST Registration (₹999)": "/gst-registration",
+  "GST Registration ₹999": "/gst-registration",
+  "GST Compliance": "/gst-compliance",
+  "Company Registration": "/company-registration",
+  "Pvt Ltd Company Registration": "/company-registration",
+  Trademark: "/trademark",
+  "Trademark Registration": "/trademark",
+  "Trademark for Retail Brands": "/trademark",
+  FSSAI: "/fssai-registration",
+  "FSSAI for Cold Storage": "/fssai-registration",
+  "FSSAI for Food Courts": "/fssai-registration",
+  Udyam: "/udyam-registration",
+  "Udyam MSME Certificate": "/udyam-registration",
+  "Udyam Registration": "/udyam-registration",
+  "GeM Registration": "/gem-registration",
+  "GeM Seller Registration": "/gem-registration",
+  "GeM & E-Tendering": "/gem-registration",
+  "Loan Assistance": "/loan-assistance",
+  "Working Capital Loan DPR": "/loan-assistance",
+  "DPR for Machinery Loans": "/loan-assistance",
+  "MSME Loan DPR": "/loan-assistance",
+};
 
 export function LocalPage({ area }: { area: AreaContent }) {
   const path = `/${area.slug}`;
@@ -86,15 +112,49 @@ export function LocalPage({ area }: { area: AreaContent }) {
             Popular Services in {area.name}
           </h2>
           <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-            {area.services.map((s) => (
-              <li
-                key={s}
-                className="rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-700"
-              >
-                {s}
-              </li>
-            ))}
+            {area.services.map((s) => {
+              const href = SERVICE_HREFS[s];
+              return (
+                <li
+                  key={s}
+                  className="rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-700"
+                >
+                  {href ? (
+                    <Link href={href} className="font-medium text-blue-800 hover:underline">
+                      {s}
+                    </Link>
+                  ) : (
+                    s
+                  )}
+                </li>
+              );
+            })}
           </ul>
+          <p className="mt-4 text-sm text-gray-600">
+            Related:{" "}
+            <Link href="/gst-registration" className="font-medium text-blue-800 hover:underline">
+              GST Registration (₹999)
+            </Link>
+            {" · "}
+            <Link
+              href="/company-registration"
+              className="font-medium text-blue-800 hover:underline"
+            >
+              Company Registration
+            </Link>
+            {" · "}
+            <Link href="/" className="font-medium text-blue-800 hover:underline">
+              Home
+            </Link>
+          </p>
+          <p className="mt-3">
+            <Link
+              href="/gst-registration"
+              className="text-sm font-semibold text-emerald-600 hover:underline"
+            >
+              Full GST Registration details &amp; plans →
+            </Link>
+          </p>
         </section>
 
         <section className="mt-12 rounded-2xl bg-gradient-to-br from-blue-800 to-blue-950 p-8 text-center text-white">

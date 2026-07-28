@@ -28,13 +28,16 @@ export const SITE = {
 
 export const AREAS_SERVED = [
   "Patel Nagar",
+  "Rajinder Nagar",
+  "Anand Parbat",
   "Karol Bagh",
+  "Inderlok",
+  "Shastri Nagar",
   "Kirti Nagar",
   "Moti Nagar",
   "DLF Moti Nagar",
   "Rajendra Place",
   "Punjabi Bagh",
-  "Anand Parbat",
   "Rama Road",
   "Naraina",
   "Mayapuri",
@@ -45,6 +48,12 @@ export const AREAS_SERVED = [
 ] as const;
 
 export const DEDICATED_AREA_SLUGS = [
+  "patel-nagar-rajinder-nagar",
+  "anand-parbat-karol-bagh",
+  "inderlok-shastri-nagar",
+  "patel-nagar",
+  "anand-parbat",
+  "inderlok",
   "karol-bagh",
   "kirti-nagar",
   "moti-nagar",

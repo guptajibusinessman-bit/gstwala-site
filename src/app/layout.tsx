@@ -17,9 +17,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: "Premium Business Consultancy Delhi",
+    title: "GST Registration in Delhi | ₹999 Pay After Approval",
     description:
-      "GSTwala – GST, company registration, trademark, GeM & bank loans for Delhi MSMEs. WhatsApp-only orders, no office visit. Free consultation – scale your business today.",
+      "GST registration Delhi ₹999 – pay after approval. Patel Nagar, Rajinder Nagar, Anand Parbat, Karol Bagh, Inderlok, Shastri Nagar MSMEs ke liye WhatsApp pe order. GSTwala.",
     path: "/",
   }),
   metadataBase: new URL(SITE.baseUrl),

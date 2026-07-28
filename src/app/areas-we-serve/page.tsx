@@ -11,7 +11,7 @@ import { AREAS_SERVED, DEDICATED_AREA_SLUGS } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Areas We Serve Delhi",
   description:
-    "GSTwala serves Central & West Delhi – Patel Nagar, Karol Bagh, Kirti Nagar, Moti Nagar & more. Business compliance via WhatsApp. Check your area & consult free.",
+    "GSTwala serves Central & West Delhi – Patel Nagar, Rajinder Nagar, Anand Parbat, Karol Bagh, Inderlok, Shastri Nagar, Kirti Nagar, Moti Nagar & more. WhatsApp pe GST & compliance.",
   path: "/areas-we-serve",
 });
 
@@ -19,7 +19,7 @@ const FAQS = [
   {
     question: "Which areas does GSTwala serve?",
     answer:
-      "We serve Central Delhi and West Delhi including Patel Nagar, Karol Bagh, Kirti Nagar, Moti Nagar, DLF Moti Nagar, and surrounding industrial zones.",
+      "We serve Central Delhi and West Delhi including Patel Nagar, Rajinder Nagar, Anand Parbat, Karol Bagh, Inderlok, Shastri Nagar, Kirti Nagar, Moti Nagar, DLF Moti Nagar, and surrounding industrial zones.",
   },
   {
     question: "Is service available outside Delhi NCR?",
@@ -34,7 +34,7 @@ const FAQS = [
   {
     question: "Which areas have dedicated local pages?",
     answer:
-      "Karol Bagh, Kirti Nagar, Moti Nagar, and DLF Moti Nagar have dedicated pages with area-specific services.",
+      "Combined GST-focused pages: Patel Nagar & Rajinder Nagar, Anand Parbat & Karol Bagh, Inderlok & Shastri Nagar – plus Karol Bagh, Kirti Nagar, Moti Nagar, and DLF Moti Nagar.",
   },
 ];
 

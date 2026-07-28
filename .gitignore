@@ -53,3 +53,6 @@ desktop.ini
 
 # turbo / cache
 .turbo
+
+.vercel
+.env*

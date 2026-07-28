@@ -30,7 +30,7 @@ const HOME_FAQS = [
   {
     question: "Which Delhi areas does GSTwala serve?",
     answer:
-      "Central and West Delhi including Patel Nagar, Karol Bagh, Kirti Nagar, Moti Nagar, DLF Moti Nagar, and surrounding MSME hubs.",
+      "Central and West Delhi including Patel Nagar, Rajinder Nagar, Anand Parbat, Karol Bagh, Inderlok, Shastri Nagar, Kirti Nagar, Moti Nagar, DLF Moti Nagar, and surrounding MSME hubs.",
   },
   {
     question: "How do I start with GSTwala?",
@@ -213,13 +213,32 @@ export default function HomePage() {
             Central &amp; West Delhi – dedicated pages for key commercial hubs.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {["karol-bagh", "kirti-nagar", "moti-nagar", "dlf-moti-nagar"].map((slug) => (
+            {(
+              [
+                {
+                  href: "/patel-nagar-rajinder-nagar",
+                  label: "Patel Nagar & Rajinder Nagar",
+                },
+                {
+                  href: "/anand-parbat-karol-bagh",
+                  label: "Anand Parbat & Karol Bagh",
+                },
+                {
+                  href: "/inderlok-shastri-nagar",
+                  label: "Inderlok & Shastri Nagar",
+                },
+                { href: "/karol-bagh", label: "Karol Bagh" },
+                { href: "/kirti-nagar", label: "Kirti Nagar" },
+                { href: "/moti-nagar", label: "Moti Nagar" },
+                { href: "/dlf-moti-nagar", label: "Dlf Moti Nagar" },
+              ] as const
+            ).map((area) => (
               <Link
-                key={slug}
-                href={`/${slug}`}
+                key={area.href}
+                href={area.href}
                 className="rounded-full border border-blue-200 bg-white px-5 py-2 text-sm font-medium text-blue-800 hover:bg-blue-50"
               >
-                {slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())}
+                {area.label}
               </Link>
             ))}
             <Link

@@ -18,6 +18,13 @@ export const IMAGES = {
   kirtiNagar: "/images/kirti-nagar.jpg",
   motiNagar: "/images/moti-nagar.jpg",
   dlfMotiNagar: "/images/dlf-moti-nagar.jpg",
+  /** Reuse nearby-area assets – no design assets added */
+  patelNagar: "/images/hero-consultancy.jpg",
+  anandParbat: "/images/kirti-nagar.jpg",
+  inderlok: "/images/moti-nagar.jpg",
+  patelNagarRajinderNagar: "/images/gst-registration.jpg",
+  anandParbatKarolBagh: "/images/karol-bagh.jpg",
+  inderlokShastriNagar: "/images/moti-nagar.jpg",
 } as const;
 
 export const SERVICE_IMAGES: Record<string, string> = {
@@ -35,6 +42,12 @@ export const SERVICE_IMAGES: Record<string, string> = {
 };
 
 export const AREA_IMAGES: Record<string, string> = {
+  "patel-nagar-rajinder-nagar": IMAGES.patelNagarRajinderNagar,
+  "anand-parbat-karol-bagh": IMAGES.anandParbatKarolBagh,
+  "inderlok-shastri-nagar": IMAGES.inderlokShastriNagar,
+  "patel-nagar": IMAGES.patelNagar,
+  "anand-parbat": IMAGES.anandParbat,
+  "inderlok": IMAGES.inderlok,
   "karol-bagh": IMAGES.karolBagh,
   "kirti-nagar": IMAGES.kirtiNagar,
   "moti-nagar": IMAGES.motiNagar,
