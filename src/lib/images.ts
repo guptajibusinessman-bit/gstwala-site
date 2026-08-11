@@ -2,6 +2,9 @@
 export const IMAGES = {
   logo: "/images/gstwala-logo.jpg",
   hero: "/images/hero-consultancy.jpg",
+  heroOnlineSeller: "/images/hero-family-v2.jpg",
+  gstDocsReview: "/images/gst-docs-review.jpg",
+  gstDocumentsLayout: "/images/gst-documents-layout.jpg",
   aboutTeam: "/images/about-team.jpg",
   companyRegistration: "/images/company-registration.jpg",
   gstRegistration: "/images/gst-registration.jpg",

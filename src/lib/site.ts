@@ -1,7 +1,7 @@
 export const SITE = {
   name: "GSTwala",
   legalName: "Raj GST Sewa Kendra",
-  tagline: "Form Filling Se Beyond – Premium Business Consultancy",
+  tagline: "GST Registration for Online Business — ₹999, ₹0 advance",
   baseUrl: "https://gstwala.co.in",
   phone: "+919212270108",
   phoneDisplay: "+91 92122 70108",
@@ -88,4 +88,4 @@ export function whatsappUrl(message: string) {
 }
 
 export const DEFAULT_WHATSAPP_MSG =
-  "Namaste, GSTwala website se aa raha hoon. Free consultation chahiye.";
+  "Namaste, GSTwala website se aa raha hoon. Online business ke liye GST Registration ₹999 chahiye (₹0 advance).";

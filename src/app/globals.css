@@ -2,10 +2,40 @@
 
 @theme inline {
   --font-sans: var(--font-inter), system-ui, sans-serif;
-  --color-brand-blue: #1e40af;
+  --color-brand-blue: #1e3a8a;
+  --color-brand-navy: #0f172a;
   --color-brand-emerald: #10b981;
+  --color-surface: #f8fafc;
+  --color-surface-blue: #f0f7ff;
 }
 
 body {
   font-family: var(--font-sans);
+  color: #1e293b;
+  background-color: #ffffff;
+}
+
+.safe-area-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+/* Calm fintech surfaces — light, not busy */
+.surface-soft {
+  background: linear-gradient(165deg, #eef5ff 0%, #ffffff 58%, #f8fafc 100%);
+}
+
+.surface-blue {
+  background-color: #f8fafc;
+}
+
+.card-saas {
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+}
+
+.card-saas-hover:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.08);
 }

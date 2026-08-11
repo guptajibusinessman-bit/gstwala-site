@@ -17,9 +17,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: "GST Registration in Delhi | ₹999 Pay After Approval",
+    title: "GST Registration for Online Business | ₹999 | ₹0 Advance",
     description:
-      "GST registration Delhi ₹999 – pay after approval. Patel Nagar, Rajinder Nagar, Anand Parbat, Karol Bagh, Inderlok, Shastri Nagar MSMEs ke liye WhatsApp pe order. GSTwala.",
+      "GST registration for Amazon, Flipkart, Meesho & online sellers. ₹999 after approval, ₹0 advance. Certificate on WhatsApp. Nil filing ₹300/month. GSTwala.",
     path: "/",
   }),
   metadataBase: new URL(SITE.baseUrl),
@@ -43,7 +43,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-IN" className={`${inter.variable} scroll-smooth`}>
-      <body className="flex min-h-screen flex-col bg-white font-sans text-gray-800 antialiased">
+      <body className="flex min-h-screen flex-col bg-white pb-20 font-sans text-gray-800 antialiased md:pb-0">
         <JsonLd data={localBusinessSchema()} />
         <Header />
         <main className="flex-1">{children}</main>

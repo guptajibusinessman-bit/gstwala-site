@@ -32,7 +32,9 @@ export function Footer() {
               />
             </div>
             <p className="text-sm">{SITE.legalName}</p>
-            <p className="mt-2 text-sm">Premium Business Consultancy · WhatsApp-only orders</p>
+            <p className="mt-2 text-sm">
+              GST Registration for Online Business · ₹999 · ₹0 advance
+            </p>
             <a
               href={`tel:${SITE.phone}`}
               className="mt-3 block text-sm font-semibold text-emerald-400 hover:text-emerald-300"

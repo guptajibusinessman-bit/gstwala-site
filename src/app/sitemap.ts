@@ -32,6 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const support = [
+    {
+      url: `${base}/gst-registration-online-business`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
     { url: `${base}/areas-we-serve`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.85 },
     { url: `${base}/contact-us`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.85 },
     { url: `${base}/privacy`, lastModified: now, changeFrequency: "yearly" as const, priority: 0.3 },

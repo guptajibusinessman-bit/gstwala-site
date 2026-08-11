@@ -9,7 +9,8 @@ export function localBusinessSchema() {
     "@id": `${SITE.baseUrl}/#business`,
     name: SITE.name,
     legalName: SITE.legalName,
-    description: SITE.tagline,
+    description:
+      "GST registration and compliance support for online sellers and home-based businesses. ₹999 registration with ₹0 advance — pay after approval.",
     url: SITE.baseUrl,
     telephone: SITE.phone,
     email: SITE.email,
