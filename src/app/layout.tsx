@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     email: true,
     address: true,
   },
+  verification: {
+    google: "ZVrHlDRkeNpQ80sPL8AAsix0cdiIOXdyauYYKfdc1Vg",
+  },
 };
 
 export default function RootLayout({
