@@ -44,43 +44,115 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-/** Same-page anchors for future dedicated platform guides (no empty pages) */
+/** Same-page platform notes — no separate marketplace URLs */
 const PLATFORM_NOTES = [
   {
     id: "amazon-seller",
     name: "Amazon",
     h3: "GST registration for Amazon seller",
-    text: "Amazon seller requirements can depend on category, location and account type. GST is often needed for marketplace selling — but the exact step depends on your case. We help first-time sellers check what applies before registration.",
+    know: "A first-time Amazon seller usually meets GST on the onboarding form, not as a separate legal lecture. Whether you must register still depends on your supplies, turnover, location and account type. Amazon’s GST fields can change — treat the current screen as a request for your GST position, not proof that every seller must register.",
+    gstin:
+      "A GSTIN may be relevant so the marketplace can map your seller account and invoices. When GST applies to you, having it ready usually makes that onboarding step simpler.",
+    help: "You are starting Amazon for the first time, papers are not in your name, or the form is asking for GST details you do not yet have.",
   },
   {
     id: "flipkart-seller",
     name: "Flipkart",
     h3: "GST registration for Flipkart seller",
-    text: "Flipkart onboarding rules can vary. GST for online business on Flipkart should be planned with your product type and setup in mind — we explain the practical next step in simple language.",
+    know: "Flipkart seller onboarding can also request GST information. What they ask can vary by category, account setup and current platform rules. Plan GST around your catalogue and location — not another seller’s path, and not a screenshot from last year.",
+    gstin:
+      "A GSTIN may be how the marketplace records your seller identity for orders and any tax-related reporting that applies to you.",
+    help: "Flipkart has asked for GST details, you sell from home, or you want the application prepared without an office visit.",
   },
   {
     id: "meesho-seller",
     name: "Meesho",
     h3: "GST registration for Meesho seller",
-    text: "Many home-based sellers start on Meesho. Requirements can differ by product and scale. GSTwala focuses on GST registration for online sellers who are just starting — including Meesho-style social commerce.",
+    know: "Many first-time and home-based sellers start on Meesho. GST still depends on what you sell, scale and applicable rules — not on Meesho alone. Meesho’s GST prompts can change as the seller account grows.",
+    gstin:
+      "If Meesho or your buyers need GST details, a GSTIN is what you share. Some sellers register before listing; others should check first. We do not assume every Meesho seller must register.",
+    help: "You sell from a parents’ house or a rented room, the electricity bill is not in your name, or you want a document check before you apply.",
   },
   {
     id: "shopify-seller",
     name: "Shopify",
     h3: "GST registration for Shopify seller",
-    text: "If you sell via Shopify or your own store, GST may apply based on goods/services, turnover and interstate sales. We help ecommerce sellers understand registration for a D2C / website business.",
+    know: "On Shopify you run the store. GST may apply based on goods or services, turnover and where you ship. Payment and theme apps sometimes ask for a GSTIN — those prompts can change, and they are not a substitute for checking your own GST position.",
+    gstin:
+      "A GSTIN may be needed on invoices, checkout or payment setup as the business grows. Exact display and compliance depend on your GST profile.",
+    help: "You are moving from social selling to your own store, you sell interstate, or home / rented premises documents are unclear.",
   },
   {
     id: "instagram-seller",
     name: "Instagram / Social Selling",
     h3: "GST for Instagram & social selling",
-    text: "Selling on Instagram or WhatsApp is still an online business. GST need depends on your model — not every social seller has the same requirement. We guide case-by-case.",
+    know: "Selling on Instagram, WhatsApp or Facebook is still an online business. GST is not decided by the app — it depends on your model, supplies and other applicable conditions.",
+    gstin:
+      "If you later list on a marketplace or open a website, having GST in place (when it applies) avoids a last-minute scramble. Social selling by itself does not automatically mean GST is required.",
+    help: "Orders are growing, you want to move to Amazon, Meesho or Shopify, or you need to know whether to register before you spend on ads or stock.",
   },
   {
     id: "d2c-website",
     name: "Own Website / D2C",
     h3: "GST registration for home business & D2C",
-    text: "Own website and D2C sellers often need a GST number for online selling as they grow. We support GST registration documents and application for home businesses.",
+    know: "Your own website is your store. GST for online selling here follows the same case-by-case rules — and once registered, invoices and returns are your responsibility.",
+    gstin:
+      "A GSTIN is what you put on tax invoices and, where required, on the site. After registration, filing still applies when your GST profile requires it.",
+    help: "You operate from home, documents are in a parent’s or landlord’s name, or you need registration plus a clear view of filing next.",
+  },
+] as const;
+
+const SELL_CHANNELS = [
+  {
+    title: "Amazon, Flipkart & Meesho",
+    text: "You sell through their platform. A GSTIN field often appears during seller onboarding or as you grow. You follow their current seller steps plus the GST rules that apply to you — the marketplace is not your GST consultant, and its form can change.",
+  },
+  {
+    title: "Shopify / own website",
+    text: "You run the store, collect payment and fulfil orders. A GSTIN may be needed on invoices and, as supplies grow, for checkout or payment setup. There is no marketplace collecting GST data for you.",
+  },
+  {
+    title: "Instagram / social selling",
+    text: "Selling in DMs is still an online business. GST depends on what and how you sell — not on Instagram or WhatsApp. Many first-time sellers check GST before they move to a marketplace or their own site.",
+  },
+] as const;
+
+const HOME_SITUATIONS = [
+  {
+    title: "Business operated from home",
+    text: "A home-based online business can often use the house as premises. Proof still depends on whose name is on the property and utility papers — not on the fact that you sell from home.",
+  },
+  {
+    title: "Parents’ property or address",
+    text: "Very common for first-time sellers. Supporting documents vary with ownership and who lives there. We review what you have before filing — we do not promise one standard pack for every parents’ house.",
+  },
+  {
+    title: "Electricity / utility bill not in your name",
+    text: "Also common. A bill in someone else’s name does not automatically block GST, but the supporting papers depend on the case. We do not treat one substitute document as universally accepted.",
+  },
+  {
+    title: "Rented premises",
+    text: "A rent agreement is often part of the discussion. What is accepted depends on the tenancy papers, the period covered, and whose name is on the bill.",
+  },
+  {
+    title: "Landlord consent / NOC",
+    text: "Some rented cases also need a landlord letter or NOC. Formats differ. We check what fits your tenancy instead of handing you a single “always accepted” consent letter.",
+  },
+] as const;
+
+const AFTER_GSTIN_STEPS = [
+  { step: "01", title: "GST Registration", text: "Application prepared and submitted with your documents." },
+  { step: "02", title: "GSTIN & certificate", text: "After approval, GSTIN and the certificate PDF are shared with you." },
+  {
+    step: "03",
+    title: "Marketplace / business use",
+    text: "Add GSTIN where Amazon, Flipkart, Meesho, Shopify or your own store currently requires it.",
+  },
+  {
+    step: "04",
+    title: "GST return filing",
+    text: "File returns as applicable. Nil / low activity support from ₹300/month.",
+    href: "/gst-compliance",
   },
 ] as const;
 
@@ -153,6 +225,31 @@ const PAGE_FAQS: { question: string; answer: string }[] = [
     question: "Office visit zaroori hai?",
     answer:
       "Nahi. Process WhatsApp pe chalta hai. Documents photos se share karein; certificate digital PDF se milta hai.",
+  },
+  {
+    question: "Do online sellers need GST registration?",
+    answer:
+      "It depends on your business model, the goods or services you supply, turnover, location and other GST conditions. Selling on a marketplace or website can make GST relevant, but it is not true that every online seller must register. WhatsApp us if you want a practical check for your case.",
+  },
+  {
+    question: "Can I register GST for a home-based online business?",
+    answer:
+      "Often yes — many first-time sellers operate from home. Address and premises documents depend on whether the house is yours, in a parent’s name, or rented. We review your papers before filing. Acceptance still depends on the documents and the GST department.",
+  },
+  {
+    question: "What happens after I receive a GSTIN?",
+    answer:
+      "You receive the GST certificate (typically as a PDF). Then you use the GSTIN where your marketplace or website requires it, and file GST returns as applicable. For nil or low activity, GSTwala offers Nil GST Return Filing from ₹300/month. Exact filing type depends on your GST profile.",
+  },
+  {
+    question: "Why do marketplaces ask for GST when I start selling?",
+    answer:
+      "Amazon, Flipkart, Meesho and similar platforms often have a GSTIN field during seller onboarding. That question is about their current account setup and compliance process. It does not, by itself, mean GST is mandatory for every first-time online seller. Your GST position still depends on your supplies, turnover, location and other applicable conditions.",
+  },
+  {
+    question: "Can a document or address mismatch cause GST problems?",
+    answer:
+      "Yes. Applications often stall when PAN, Aadhaar and premises proof do not tell one clear story — for example a home-based business where the electricity bill is in a parent’s or landlord’s name and supporting papers are missing. GSTwala checks those gaps before submission. We do not invent approval odds, and government approval is not guaranteed.",
   },
 ];
 
@@ -260,6 +357,10 @@ export default function GstRegistrationOnlineBusinessPage() {
               GST Return Filing
             </Link>
             {" · "}
+            <Link href="/gst-notice-handling" className="font-medium text-blue-800 hover:underline">
+              GST Notice Assistance
+            </Link>
+            {" · "}
             <a href="#faq" className="font-medium text-blue-800 hover:underline">
               FAQ
             </a>
@@ -275,17 +376,61 @@ export default function GstRegistrationOnlineBusinessPage() {
           </h2>
           <div className="mt-4 space-y-3 text-base leading-relaxed text-slate-600">
             <p>
-              GST registration for online sellers is not a one-size rule. Whether you need a GST
-              number for online selling depends on your business model, goods or services, turnover,
-              selling channel (marketplace / website / social), and applicable GST rules.
+              GST applicability depends on the seller&apos;s business model, supplies, turnover,
+              location and other conditions under GST rules. It is not a single rule for every online
+              seller — and we do not claim that GST is mandatory for every online seller.
             </p>
             <p>
-              Ecommerce sellers on Amazon, Flipkart or Meesho may need GST for platform onboarding;
-              Shopify and home business sellers may need it as they grow or sell interstate. Always
-              check your situation first — GSTwala helps first-time sellers understand the practical
-              next step without jargon.
+              Marketplace selling, a Shopify or own-website store, or Instagram / social selling can
+              all raise GST questions. Some first-time sellers need GST before they can finish
+              platform onboarding; others should check first. Ecommerce sellers are not automatically
+              in the same position.
+            </p>
+            <p>
+              If you are starting an online business for the first time, GST usually appears when a
+              marketplace form or your own-store checkout asks for a GSTIN. That onboarding field is
+              asking for your GST position — it is not a legal finding that every first-time online
+              seller must register. We help you separate “the platform asked” from “GST applies to
+              you.”
+            </p>
+            <p>
+              If you already know you want assistance with the application, see{" "}
+              <Link href="/gst-registration" className="font-semibold text-blue-800 hover:underline">
+                GST Registration
+              </Link>{" "}
+              (₹999, ₹0 advance, pay after approval).
             </p>
           </div>
+          <p className="mt-6 text-base font-semibold text-slate-900">
+            Not sure whether GST applies to your case? WhatsApp us.
+          </p>
+          <WhatsAppButton
+            message="Namaste, GSTwala website se aa raha hoon. Online business ke liye GST chahiye ya nahi — case check karna hai."
+            className={`mt-3 ${ctaWa}`}
+          >
+            WhatsApp GSTwala
+          </WhatsAppButton>
+        </div>
+
+        <div className="mx-auto mt-10 max-w-5xl px-4 sm:px-6 lg:px-8">
+          <h3 className="text-center text-lg font-bold text-slate-900 sm:text-xl">
+            Marketplace vs own website vs social selling
+          </h3>
+          <p className="mx-auto mt-2 max-w-2xl text-center text-sm text-slate-600">
+            GST for online selling is the same idea everywhere — check if it applies, then register
+            if it does. What changes is who asks for your GSTIN and who issues invoices.
+          </p>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-3">
+            {SELL_CHANNELS.map((item) => (
+              <li
+                key={item.title}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm"
+              >
+                <h4 className="text-base font-bold text-blue-900">{item.title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.text}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -299,8 +444,9 @@ export default function GstRegistrationOnlineBusinessPage() {
             GST for Amazon, Flipkart, Meesho &amp; Shopify Sellers
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-slate-600 sm:text-base">
-            GST registration for ecommerce sellers can differ by platform and business model. Jump to
-            your channel below — full platform guides can be added later without empty pages today.
+            GST registration for ecommerce sellers can differ by platform and business model.
+            Platform GST fields can change — use the notes below as a first-time briefing, then
+            WhatsApp us with what your current onboarding screen actually asks.
           </p>
 
           <nav
@@ -343,7 +489,15 @@ export default function GstRegistrationOnlineBusinessPage() {
                 <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-400">
                   {p.name}
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{p.text}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{p.know}</p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  <span className="font-semibold text-slate-800">Why GSTIN can matter: </span>
+                  {p.gstin}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  <span className="font-semibold text-slate-800">Ask us when: </span>
+                  {p.help}
+                </p>
                 <WhatsAppButton
                   message={`Namaste, GSTwala website se aa raha hoon. ${p.name} pe sell karna hai — GST registration for online business (₹999) ke baare mein jaanna hai.`}
                   className="mt-3 text-sm font-semibold text-emerald-600 hover:underline"
@@ -362,28 +516,61 @@ export default function GstRegistrationOnlineBusinessPage() {
           <DocumentGuidanceVisual
             headingId="docs"
             title="Documents Usually Needed for GST Registration"
-            subtitle="Professional sample mockups — fictional / blurred details only. GST registration documents can vary by address type."
+            subtitle="Professional sample mockups — fictional / blurred details only. GST documents for online sellers can vary by address type."
           />
+          <div className="mx-auto mt-6 max-w-3xl text-sm leading-relaxed text-slate-600">
+            <p>
+              First-time online sellers are usually asked for PAN, Aadhaar, a photograph,
+              address / business premises proof, and bank proof where applicable. Constitution
+              documents (for anything other than a simple proprietorship) are added only when they
+              apply.
+            </p>
+            <p className="mt-2">
+              The exact list depends on how the business is set up and whose name is on the
+              premises papers — own home, parents&apos; house, or rent. GST documents for online
+              sellers are confirmed after a document check, not from a generic internet list.
+            </p>
+            <p className="mt-3">
+              Address and name mismatches are a common reason applications get queries or come
+              back for correction: PAN, Aadhaar and premises proof must tell one clear story. A
+              home-based business with the electricity bill in a parent&apos;s or landlord&apos;s
+              name is not automatically rejected — missing supporting papers is what creates
+              avoidable problems.
+            </p>
+            <p className="mt-2">
+              Before we submit, GSTwala checks that identity papers match the applicant, the
+              premises documents match the address you are using, and obvious gaps (unclear
+              ownership, incomplete rent or NOC papers) are flagged. We cannot promise approval
+              or quote rejection rates. We can reduce issues that were visible before filing.
+            </p>
+          </div>
           <div className="mt-8 rounded-2xl border border-blue-100 bg-blue-50/60 p-5 sm:p-6">
             <h3 className="text-lg font-bold text-slate-900">
-              House is in your parents&apos; name?
+              GST for home-based online business
             </h3>
-            <p className="mt-2 text-sm font-semibold text-blue-900">
-              Electricity bill isn&apos;t in your name?
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              Many first-time sellers operate from home. Documents depend on your actual
+              circumstances — we do not treat one paper as universally accepted.
             </p>
-            <p className="mt-1 text-sm font-semibold text-blue-900">
-              Landlord isn&apos;t providing documents?
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600">
-              Yeh situations first-time online sellers aur home business sellers mein common hain.
-              GSTwala aapke specific case ke documents check karta hai aur applicable documentation
-              pe practical guidance deta hai — without one-size-fits-all promises.
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+              {HOME_SITUATIONS.map((item) => (
+                <li
+                  key={item.title}
+                  className="rounded-xl border border-blue-100 bg-white px-4 py-3"
+                >
+                  <h4 className="text-sm font-bold text-slate-900">{item.title}</h4>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{item.text}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-sm font-semibold text-slate-900">
+              Not sure which documents apply to your case? WhatsApp GSTwala.
             </p>
             <WhatsAppButton
               message="Namaste, GSTwala website se aa raha hoon. Address / electricity bill / landlord documents ke baare mein doubt hai — GST registration for online business help chahiye."
-              className={`mt-4 ${ctaWa}`}
+              className={`mt-3 ${ctaWa}`}
             >
-              Check my documents on WhatsApp
+              WhatsApp GSTwala
             </WhatsAppButton>
           </div>
         </div>
@@ -490,20 +677,53 @@ export default function GstRegistrationOnlineBusinessPage() {
           <h2 id="after" className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
             What Happens After GST Registration?
           </h2>
-          <div className="mt-4 space-y-3 text-base leading-relaxed text-slate-600">
+          <ol className="mt-6 grid gap-3 sm:grid-cols-2">
+            {AFTER_GSTIN_STEPS.map((item) => (
+              <li
+                key={item.step}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-4"
+              >
+                <span className="text-xs font-bold text-blue-800">{item.step}</span>
+                <h3 className="mt-1 text-sm font-bold text-slate-900">
+                  {"href" in item && item.href ? (
+                    <Link href={item.href} className="text-blue-800 hover:underline">
+                      {item.title}
+                    </Link>
+                  ) : (
+                    item.title
+                  )}
+                </h3>
+                <p className="mt-1 text-sm leading-relaxed text-slate-600">{item.text}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-6 space-y-3 text-base leading-relaxed text-slate-600">
             <p>
-              After approval you receive the GST Certificate PDF on WhatsApp. Next comes compliance —
-              return filing when applicable for your GST profile.
+              In short: GST registration → GSTIN / certificate → business or marketplace
+              compliance →{" "}
+              <Link href="/gst-compliance" className="font-semibold text-blue-800 hover:underline">
+                GST return filing
+              </Link>{" "}
+              when it applies to your profile.
+            </p>
+            <p>
+              After approval you receive the GST Certificate PDF on WhatsApp. Then you add the
+              GSTIN where Amazon, Flipkart, Meesho, Shopify or your own store currently requires
+              it.
             </p>
             <p>
               Early-stage online sellers often need simple support for nil / low-activity periods.
               GSTwala offers{" "}
               <strong className="font-semibold text-slate-800">
-                Nil GST Return Filing at ₹300/month
+                Nil GST Return Filing from ₹300/month
               </strong>
               . Exact filing type depends on your case — see{" "}
               <Link href="/gst-compliance" className="font-semibold text-blue-800 hover:underline">
                 GST Return Filing
+              </Link>
+              . If you receive a department query or notice, we also offer{" "}
+              <Link href="/gst-notice-handling" className="font-semibold text-blue-800 hover:underline">
+                GST Notice Assistance
               </Link>
               .
             </p>
@@ -605,6 +825,10 @@ export default function GstRegistrationOnlineBusinessPage() {
             {" · "}
             <Link href="/gst-compliance" className="underline-offset-2 hover:underline">
               GST Return Filing
+            </Link>
+            {" · "}
+            <Link href="/gst-notice-handling" className="underline-offset-2 hover:underline">
+              GST Notice Assistance
             </Link>
             {" · "}
             <a href="#faq" className="underline-offset-2 hover:underline">

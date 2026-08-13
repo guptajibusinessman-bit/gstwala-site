@@ -102,7 +102,11 @@ const WHY = [
   "Re-application without additional GSTwala service charge if rejected, subject to correcting required issues/documents",
 ] as const;
 
-const FAQS: { question: string; answer: string }[] = [
+const FAQS: {
+  question: string;
+  answer: string;
+  answerLink?: { href: string; phrase: string };
+}[] = [
   {
     question: "What is GST registration?",
     answer:
@@ -117,6 +121,10 @@ const FAQS: { question: string; answer: string }[] = [
     question: "Can I get GST registration for an online business?",
     answer:
       "Yes, many online and ecommerce businesses register for GST. Exact need and documents depend on how and where you sell. See our guide on GST registration for online business for first-time seller context.",
+    answerLink: {
+      href: "/gst-registration-online-business",
+      phrase: "GST registration for online business",
+    },
   },
   {
     question: "Can I register from a home address?",
@@ -247,7 +255,14 @@ export default function GstRegistrationPage() {
             </p>
             <p>Common situations where people explore GST registration include:</p>
             <ul className="list-disc space-y-1.5 pl-5">
-              <li>Online sellers and ecommerce businesses</li>
+              <li>
+                <Link
+                  href="/gst-registration-online-business"
+                  className="font-medium text-blue-800 hover:underline"
+                >
+                  Online sellers and ecommerce businesses
+                </Link>
+              </li>
               <li>Amazon, Flipkart and Meesho sellers (where platform or law requires it)</li>
               <li>Shopify / D2C and website sellers</li>
               <li>Businesses supplying interstate or otherwise required to register</li>
@@ -420,6 +435,20 @@ export default function GstRegistrationPage() {
             Government approval is not guaranteed. Processing time depends on the GST department
             portal and complete documents.
           </p>
+          <p className="mt-3 text-center text-sm text-slate-600">
+            After GST approval, monthly filing may apply. See{" "}
+            <Link href="/gst-compliance" className="font-semibold text-blue-800 hover:underline">
+              GST Return Filing
+            </Link>
+            {" "}(Nil filing from ₹300/month where relevant) or{" "}
+            <Link
+              href="/gst-notice-handling"
+              className="font-semibold text-blue-800 hover:underline"
+            >
+              GST Notice Assistance
+            </Link>
+            {" "}if you receive a notice.
+          </p>
         </div>
       </section>
 
@@ -486,7 +515,7 @@ export default function GstRegistrationPage() {
                   </span>
                 </summary>
                 <p className="border-t border-slate-100 px-4 pb-4 pt-3 text-sm leading-relaxed text-slate-600">
-                  {item.answer}
+                  <FaqAnswerText answer={item.answer} link={item.answerLink} />
                 </p>
               </details>
             ))}
@@ -502,6 +531,10 @@ export default function GstRegistrationPage() {
             {" · "}
             <Link href="/gst-compliance" className="font-semibold text-blue-800 hover:underline">
               GST Return Filing
+            </Link>
+            {" · "}
+            <Link href="/gst-notice-handling" className="font-semibold text-blue-800 hover:underline">
+              GST Notice Assistance
             </Link>
           </p>
         </div>
@@ -536,11 +569,15 @@ export default function GstRegistrationPage() {
               href="/gst-registration-online-business"
               className="underline-offset-2 hover:underline"
             >
-              Online Business GST
+              GST Registration for Online Business
             </Link>
             {" · "}
             <Link href="/gst-compliance" className="underline-offset-2 hover:underline">
               GST Return Filing
+            </Link>
+            {" · "}
+            <Link href="/gst-notice-handling" className="underline-offset-2 hover:underline">
+              GST Notice Assistance
             </Link>
             {" · "}
             <a href="#faq" className="underline-offset-2 hover:underline">
@@ -549,6 +586,28 @@ export default function GstRegistrationPage() {
           </p>
         </div>
       </section>
+    </>
+  );
+}
+
+function FaqAnswerText({
+  answer,
+  link,
+}: {
+  answer: string;
+  link?: { href: string; phrase: string };
+}) {
+  if (!link) return answer;
+  const start = answer.toLowerCase().indexOf(link.phrase.toLowerCase());
+  if (start === -1) return answer;
+  const end = start + link.phrase.length;
+  return (
+    <>
+      {answer.slice(0, start)}
+      <Link href={link.href} className="font-semibold text-blue-800 hover:underline">
+        {answer.slice(start, end)}
+      </Link>
+      {answer.slice(end)}
     </>
   );
 }

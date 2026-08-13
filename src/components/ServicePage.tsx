@@ -58,6 +58,25 @@ export function ServicePage({ service }: { service: ServiceContent }) {
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-gray-600">{service.intro}</p>
 
+        {service.slug === "gst-compliance" && (
+          <p className="mt-4 text-base leading-relaxed text-gray-600">
+            A common path for first-time sellers is{" "}
+            <Link href="/gst-registration" className="font-medium text-blue-800 hover:underline">
+              GST Registration ₹999
+            </Link>
+            {" "}
+            (₹0 advance, pay after GST approval). After approval, monthly Nil GST Return Filing from
+            ₹300 may apply depending on your GST profile. Online sellers can also read{" "}
+            <Link
+              href="/gst-registration-online-business"
+              className="font-medium text-blue-800 hover:underline"
+            >
+              GST Registration for Online Business
+            </Link>
+            .
+          </p>
+        )}
+
         {service.pricing && (
           <p className="mt-4 inline-block rounded-full bg-emerald-50 px-4 py-1.5 text-sm font-semibold text-emerald-700">
             {service.pricing}
@@ -118,9 +137,9 @@ export function ServicePage({ service }: { service: ServiceContent }) {
           <h2 className="text-xl font-bold text-gray-900">Related Services</h2>
           <ul className="mt-4 space-y-2">
             {service.related.map((rel) => (
-              <li key={rel.slug}>
+              <li key={rel.href ?? rel.slug}>
                 <Link
-                  href={`/${rel.slug}`}
+                  href={rel.href ?? `/${rel.slug}`}
                   className="font-medium text-blue-800 hover:underline"
                 >
                   {rel.label}

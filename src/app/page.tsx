@@ -25,9 +25,9 @@ import { buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "GST Registration for Online Business | ₹999 | ₹0 Advance",
+  title: "GST Registration for New Online Sellers | ₹999 | ₹0 Advance",
   description:
-    "GST registration for Amazon, Flipkart, Meesho, Shopify & Instagram sellers. ₹999 after approval, ₹0 advance. Certificate PDF on WhatsApp. Nil filing from ₹300/month. GSTwala.",
+    "GST registration for new online sellers. Amazon, Flipkart, Meesho, Shopify & Instagram. ₹999, ₹0 advance, pay after GST approval. Certificate on WhatsApp. Nil filing from ₹300/month. GSTwala.",
   path: "/",
 });
 
@@ -38,8 +38,8 @@ export default function HomePage() {
         data={[
           faqSchema(HOME_FAQS),
           serviceSchema(
-            "GST Registration for Online Business",
-            "GST registration for online sellers at ₹999 with ₹0 advance. Pay only after GST approval. Certificate delivered on WhatsApp.",
+            "GST Registration for New Online Sellers",
+            "GST registration for new online sellers at ₹999 with ₹0 advance. Pay only after GST approval. Certificate delivered on WhatsApp.",
             SITE.baseUrl
           ),
         ]}
@@ -56,7 +56,7 @@ export default function HomePage() {
               id="hero-heading"
               className="text-[1.85rem] font-extrabold leading-[1.15] tracking-tight text-slate-900 sm:text-4xl lg:text-[2.55rem]"
             >
-              GST Registration for Online Business —{" "}
+              GST Registration for New Online Sellers —{" "}
               <span className="text-blue-800">₹999</span>
             </h1>
             <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg lg:mx-0">
@@ -129,7 +129,14 @@ export default function HomePage() {
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-sm text-slate-600 sm:text-base">
             Starting to sell online? GSTwala helps first-time sellers understand and complete their
-            GST registration.
+            GST registration. Read our guide to{" "}
+            <Link
+              href="/gst-registration-online-business"
+              className="font-semibold text-blue-800 hover:underline"
+            >
+              GST Registration for Online Business
+            </Link>
+            .
           </p>
           <PlatformStrip />
           <div className="mt-8 text-center">
@@ -211,6 +218,16 @@ export default function HomePage() {
               </details>
             ))}
           </div>
+          <p className="mt-6 text-center text-sm text-slate-500">
+            Selling on Amazon, Flipkart, Meesho or Shopify? See{" "}
+            <Link
+              href="/gst-registration-online-business"
+              className="font-semibold text-blue-800 hover:underline"
+            >
+              GST for Online Sellers
+            </Link>
+            .
+          </p>
           <div className="mt-7 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-6 text-center">
             <p className="font-semibold text-slate-900">Not sure about your documents?</p>
             <WhatsAppButton
@@ -298,6 +315,12 @@ export default function HomePage() {
               >
                 Get GST Registration
               </WhatsAppButton>
+              <Link
+                href="/gst-registration-online-business"
+                className="mt-3 text-center text-xs font-semibold text-blue-800 hover:underline"
+              >
+                GST Registration for Online Business →
+              </Link>
             </div>
             <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7 md:col-span-2">
               <h3 className="text-lg font-bold text-slate-900">Nil GST Return Filing</h3>
@@ -365,6 +388,15 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
+          <p className="mt-4 text-center text-sm text-slate-500">
+            First-time marketplace or website sellers:{" "}
+            <Link
+              href="/gst-registration-online-business"
+              className="font-semibold text-blue-800 hover:underline"
+            >
+              GST Registration for Online Sellers
+            </Link>
+          </p>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
             {GST_SERVICES.filter((s) => !s.primary).map((s) => {
               const body = (

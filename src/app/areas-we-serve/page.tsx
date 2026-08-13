@@ -40,6 +40,16 @@ const FAQS = [
 
 const dedicatedSet = new Set<string>(DEDICATED_AREA_SLUGS);
 
+const GST_FOCUSED_AREA_SLUGS = [
+  "patel-nagar-rajinder-nagar",
+  "anand-parbat-karol-bagh",
+  "inderlok-shastri-nagar",
+] as const;
+
+const OTHER_AREA_SLUGS = DEDICATED_AREA_SLUGS.filter(
+  (slug) => !(GST_FOCUSED_AREA_SLUGS as readonly string[]).includes(slug)
+);
+
 export default function AreasPage() {
   return (
     <>
@@ -67,11 +77,54 @@ export default function AreasPage() {
         <p className="mt-4 text-lg text-gray-600">
           GSTwala provides premium business compliance across Central and West Delhi. Dedicated local expertise for key commercial and industrial hubs.
         </p>
+        <p className="mt-3 text-base text-gray-600">
+          GST-focused area guides:{" "}
+          <Link
+            href="/patel-nagar-rajinder-nagar"
+            className="font-medium text-blue-800 hover:underline"
+          >
+            Patel Nagar &amp; Rajinder Nagar
+          </Link>
+          {", "}
+          <Link
+            href="/anand-parbat-karol-bagh"
+            className="font-medium text-blue-800 hover:underline"
+          >
+            Anand Parbat &amp; Karol Bagh
+          </Link>
+          {" and "}
+          <Link
+            href="/inderlok-shastri-nagar"
+            className="font-medium text-blue-800 hover:underline"
+          >
+            Inderlok &amp; Shastri Nagar
+          </Link>
+          .
+        </p>
 
         <section className="mt-10">
-          <h2 className="text-2xl font-bold text-gray-900">Dedicated Local Pages</h2>
+          <h2 className="text-2xl font-bold text-gray-900">GST-Focused Local Pages</h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            {DEDICATED_AREA_SLUGS.map((slug) => {
+            {GST_FOCUSED_AREA_SLUGS.map((slug) => {
+              const area = AREAS[slug];
+              return (
+                <Link
+                  key={slug}
+                  href={`/${slug}`}
+                  className="rounded-xl border border-blue-100 bg-blue-50 p-5 hover:shadow-md transition-shadow"
+                >
+                  <h3 className="font-bold text-blue-900">{area.name}</h3>
+                  <p className="mt-1 text-sm text-gray-600">{area.focus}</p>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <h2 className="text-2xl font-bold text-gray-900">More Local Pages</h2>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            {OTHER_AREA_SLUGS.map((slug) => {
               const area = AREAS[slug];
               return (
                 <Link

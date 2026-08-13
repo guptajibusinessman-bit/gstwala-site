@@ -11,7 +11,7 @@ export type ServiceContent = {
   sections: { heading: string; content: string; subsections?: { heading: string; content: string }[] }[];
   pricing?: string;
   faqs: FAQ[];
-  related: { slug: ServiceSlug; label: string }[];
+  related: { slug?: ServiceSlug; href?: string; label: string }[];
   isPillar?: boolean;
 };
 
@@ -190,6 +190,11 @@ export const SERVICES: Record<ServiceSlug, ServiceContent> = {
           "Registration gets you on the GST network. Compliance keeps you there without penalties. If you only need a new GSTIN at ₹999, see our GST Registration page. This page covers ongoing filing, audits, and notice management for active taxpayers.",
       },
       {
+        heading: "From GST Registration to Monthly Filing",
+        content:
+          "Many first-time sellers start with GST Registration at ₹999, with ₹0 advance and payment after GST approval. After the GST department approves the application, monthly return filing may apply. For nil or low activity, GSTwala offers Nil GST Return Filing from ₹300/month. Exact filing type depends on your GST profile. Online sellers can also review GST Registration for Online Business. If you receive a GST notice, see GST Notice Handling.",
+      },
+      {
         heading: "Monthly & Quarterly Compliance",
         content:
           "We prepare and file GSTR-1 and GSTR-3B, reconcile purchase registers with GSTR-2B, flag ITC mismatches, and maintain filing calendars. QRMP scheme taxpayers get quarterly planning and cash-flow aligned tax payments.",
@@ -234,6 +239,7 @@ export const SERVICES: Record<ServiceSlug, ServiceContent> = {
     ],
     related: [
       { slug: "gst-registration", label: "New GST Registration ₹999" },
+      { href: "/gst-registration-online-business", label: "GST Registration for Online Sellers" },
       { slug: "gst-notice-handling", label: "GST Notice Reply" },
       { slug: "company-registration", label: "Company Registration" },
     ],

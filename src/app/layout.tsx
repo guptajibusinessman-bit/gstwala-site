@@ -17,9 +17,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: "GST Registration for Online Business | ₹999 | ₹0 Advance",
+    title: "GST Registration for New Online Sellers | ₹999 | ₹0 Advance",
     description:
-      "GST registration for Amazon, Flipkart, Meesho & online sellers. ₹999 after approval, ₹0 advance. Certificate on WhatsApp. Nil filing ₹300/month. GSTwala.",
+      "GST registration for new online sellers. Amazon, Flipkart, Meesho, Shopify & Instagram. ₹999, ₹0 advance, pay after GST approval. Certificate on WhatsApp. Nil filing from ₹300/month. GSTwala.",
     path: "/",
   }),
   metadataBase: new URL(SITE.baseUrl),
