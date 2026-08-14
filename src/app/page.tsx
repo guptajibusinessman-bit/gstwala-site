@@ -344,6 +344,12 @@ export default function HomePage() {
               >
                 Ask About Monthly Filing
               </WhatsAppButton>
+              <Link
+                href="/gst-compliance"
+                className="mt-3 text-center text-xs font-semibold text-blue-800 hover:underline"
+              >
+                View Nil GST Return Filing →
+              </Link>
             </div>
           </div>
           <p className="mx-auto mt-5 max-w-2xl text-center text-xs text-slate-500">

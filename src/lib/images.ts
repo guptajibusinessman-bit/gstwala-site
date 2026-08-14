@@ -8,7 +8,7 @@ export const IMAGES = {
   aboutTeam: "/images/about-team.jpg",
   companyRegistration: "/images/company-registration.jpg",
   gstRegistration: "/images/gst-registration.jpg",
-  gstCompliance: "/images/gst-compliance.jpg",
+  gstCompliance: "/images/nil-gst-return-filing.jpg",
   trademark: "/images/trademark.jpg",
   loanAssistance: "/images/loan-assistance.jpg",
   gemRegistration: "/images/gem-registration.jpg",

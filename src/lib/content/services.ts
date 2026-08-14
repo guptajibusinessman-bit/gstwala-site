@@ -174,74 +174,113 @@ export const SERVICES: Record<ServiceSlug, ServiceContent> = {
   },
   "gst-compliance": {
     slug: "gst-compliance",
-    title: "GST Compliance Delhi",
-    metaTitle: "GST Compliance Delhi",
+    title: "Nil GST Return Filing",
+    metaTitle: "Nil GST Return Filing | ₹300/month",
     metaDescription:
-      "Advanced GST compliance for Delhi businesses – monthly returns, reconciliation, notice handling & annual retainer. Expert support via WhatsApp. Get a quote today.",
-    h1: "GST Compliance Services in Delhi – Beyond Basic Registration",
+      "Nil GST Return Filing from ₹300/month. For customers who already have a GSTIN and eligible no/low activity. WhatsApp your GSTIN — GSTwala checks before filing. Broader GST return filing discussed case by case.",
+    h1: "Nil GST Return Filing — ₹300/month",
     intro:
-      "Already GST registered? GSTwala's compliance division handles monthly GSTR-1/3B, ITC reconciliation, e-invoicing, E-way bills, annual returns, and GST notice replies. Built for growing MSMEs who need accuracy, not just form filling.",
-    pricing: "From ₹999/month · Retainer plans available",
+      "Already have a GSTIN, or just received one? GSTwala files Nil GST returns for eligible no-activity or eligible low-activity periods. WhatsApp your GSTIN — we check whether Nil filing applies before we file. ₹300/month is for Nil GST Return Filing, not every type of GST return.",
+    pricing: "Nil GST Return Filing from ₹300/month",
     isPillar: true,
     sections: [
       {
-        heading: "GST Compliance vs GST Registration",
+        heading: "What is Nil GST Return Filing?",
         content:
-          "Registration gets you on the GST network. Compliance keeps you there without penalties. If you only need a new GSTIN at ₹999, see our GST Registration page. This page covers ongoing filing, audits, and notice management for active taxpayers.",
+          "A Nil GST return is the return filed for a period when there is no GST activity to report, or the period is eligible to be treated as Nil. For a first-time GST holder this usually means: you have a GSTIN, and for that month or quarter you are not reporting sales or purchases that need a regular return. GSTwala files this as a monthly WhatsApp service when it fits your case. We do not treat every registered person as automatically Nil.",
       },
       {
-        heading: "From GST Registration to Monthly Filing",
+        heading: "Who is it usually suitable for?",
         content:
-          "Many first-time sellers start with GST Registration at ₹999, with ₹0 advance and payment after GST approval. After the GST department approves the application, monthly return filing may apply. For nil or low activity, GSTwala offers Nil GST Return Filing from ₹300/month. Exact filing type depends on your GST profile. Online sellers can also review GST Registration for Online Business. If you receive a GST notice, see GST Notice Handling.",
+          "Nil filing is usually discussed when there has been no activity, or eligible Nil activity, in the period — for example a new GSTIN before selling starts, or a quiet month. Suitability depends on what actually happened in that period. We do not say everyone must file a Nil return. Share the period on WhatsApp and we tell you whether Nil filing is the right product.",
       },
       {
-        heading: "Monthly & Quarterly Compliance",
+        heading: "What do we need each month?",
         content:
-          "We prepare and file GSTR-1 and GSTR-3B, reconcile purchase registers with GSTR-2B, flag ITC mismatches, and maintain filing calendars. QRMP scheme taxpayers get quarterly planning and cash-flow aligned tax payments.",
+          "Typically: your GSTIN, the return period, and a clear yes or no on whether there were any sales, purchases or other GST activity. If there was activity, share those details on WhatsApp or a simple sheet. We do not use one fixed extra document pack for every Nil filing. The checklist is confirmed after we see your situation.",
       },
       {
-        heading: "GST Notice & Assessment Support",
+        heading: "What if there were sales?",
         content:
-          "Received a DRC-01, ASMT-10, or scrutiny notice? Our team drafts replies, compiles supporting invoices, and coordinates with Sai Associates for representation. Early response reduces interest and penalty exposure.",
+          "Tell GSTwala before we file. If there were sales or other transactions, Nil filing may not be the correct filing. We check the situation and explain the next step. Do not assume Nil is always right after GST registration.",
       },
       {
-        heading: "Annual Compliance Retainer",
+        heading: "What happens after filing?",
         content:
-          "Year-round package covers routine filings, phone/WhatsApp query support, and priority notice handling. Popular with Patel Nagar wholesalers and West Delhi manufacturers. Ask on WhatsApp for a retainer quote tailored to your turnover.",
+          "After the return is filed for the period, we share the filing acknowledgement or status with you on WhatsApp.",
+      },
+      {
+        heading: "Monthly service — ₹300/month",
+        content:
+          "₹300/month is a recurring Nil GST Return Filing service, subject to your filing situation remaining Nil or eligible. If your activity changes, the filing type may change — we check rather than auto-file Nil. Start or pause by messaging on WhatsApp.",
+      },
+      {
+        heading: "After GST registration",
+        content:
+          "Registration gets you a GSTIN. Filing is what comes next. After GST registration, an online seller may still need ongoing GST return compliance even when there is little or no activity. Exact filing type depends on your GST profile. Use the related links below for a new GSTIN or for online-seller registration questions.",
+      },
+      {
+        heading: "Other GST support",
+        content:
+          "If you receive a department query or notice, see GST Notice Handling (linked below). E-invoicing, E-way bills and fuller monthly returns — when Nil is not the right filing — are discussed case by case on WhatsApp. They are not included in the ₹300 Nil offer.",
       },
     ],
     faqs: [
       {
-        question: "What is the difference between GST registration and GST compliance?",
+        question: "What is a Nil GST return?",
         answer:
-          "Registration is a one-time process to obtain GSTIN. Compliance is ongoing return filing, tax payment, and record maintenance. GSTwala offers both as separate services.",
+          "A Nil GST return is the return filed for a period when there is no GST activity to report, or the period is eligible to be treated as Nil. GSTwala files this as a monthly service when it fits your case. We check before filing.",
       },
       {
-        question: "What happens if I miss a GST return deadline?",
+        question: "Who can use Nil filing?",
         answer:
-          "Government late fees of ₹50–₹200 per day apply per act, plus interest on tax due. We send reminders and file pending returns to limit penalties.",
+          "It is usually for customers who already have a GSTIN and had no activity, or eligible Nil activity, in that period. It is not a rule that everyone must file a Nil return. Share the period on WhatsApp and we confirm whether Nil filing applies.",
+      },
+      {
+        question: "What if there were sales?",
+        answer:
+          "Tell us before we file. If there were sales or other transactions, Nil filing may not be the correct filing. We check your situation and explain the next step.",
+      },
+      {
+        question: "What information should I send?",
+        answer:
+          "Typically your GSTIN, the return period, and whether there were any sales, purchases or other GST activity. If there was activity, share those details on WhatsApp. We confirm the checklist for your case.",
+      },
+      {
+        question: "What happens after filing?",
+        answer:
+          "We share the filing acknowledgement or status with you on WhatsApp after the return is filed for the period.",
+      },
+      {
+        question: "How does ₹300/month work?",
+        answer:
+          "₹300/month is a recurring Nil GST Return Filing service, subject to your filing situation remaining Nil or eligible. If activity changes, the filing type may change. Start or pause on WhatsApp.",
+      },
+      {
+        question: "What is the difference between GST registration and GST compliance?",
+        answer:
+          "Registration is a one-time process to obtain GSTIN. Compliance here means ongoing return filing. This page is for Nil GST Return Filing from ₹300/month after you have a GSTIN. New GSTIN support is a separate service.",
       },
       {
         question: "Can you handle GST department notices?",
         answer:
-          "Yes. We draft replies for scrutiny, mismatch, and demand notices. Complex cases are escalated through our Sai Associates tie-up.",
+          "Yes, as a separate service. We draft replies for scrutiny, mismatch and demand notices. Complex cases are escalated through our Sai Associates tie-up. See GST Notice Handling if you already have a notice.",
       },
       {
         question: "Do you support e-invoicing and E-way bills?",
         answer:
-          "Yes, for businesses crossing applicable turnover thresholds. We integrate e-invoice IRN generation into your monthly workflow.",
+          "Yes, for businesses where those apply. They are not part of the ₹300 Nil offer. Ask on WhatsApp and we explain what fits your profile.",
       },
       {
-        question: "Is GST compliance done via WhatsApp?",
+        question: "Is GST filing done via WhatsApp?",
         answer:
-          "Absolutely. Share purchase/sales data monthly on WhatsApp or Google Sheets. We file returns and share acknowledgements on chat.",
+          "Yes. Share your GSTIN and period on WhatsApp. If there was activity, share sales or purchase details. We file and share the acknowledgement on chat.",
       },
     ],
     related: [
       { slug: "gst-registration", label: "New GST Registration ₹999" },
       { href: "/gst-registration-online-business", label: "GST Registration for Online Sellers" },
-      { slug: "gst-notice-handling", label: "GST Notice Reply" },
-      { slug: "company-registration", label: "Company Registration" },
+      { slug: "gst-notice-handling", label: "GST Notice Handling" },
     ],
   },
   "gst-registration": {

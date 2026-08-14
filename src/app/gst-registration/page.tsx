@@ -165,6 +165,10 @@ const FAQS: {
     question: "What happens after registration?",
     answer:
       "After approval you receive your GST certificate. You should then understand compliance for your business, including return filing when applicable. GSTwala also offers Nil GST Return Filing support where relevant.",
+    answerLink: {
+      href: "/gst-compliance",
+      phrase: "Nil GST Return Filing",
+    },
   },
 ];
 
@@ -438,9 +442,9 @@ export default function GstRegistrationPage() {
           <p className="mt-3 text-center text-sm text-slate-600">
             After GST approval, monthly filing may apply. See{" "}
             <Link href="/gst-compliance" className="font-semibold text-blue-800 hover:underline">
-              GST Return Filing
+              Nil GST Return Filing
             </Link>
-            {" "}(Nil filing from ₹300/month where relevant) or{" "}
+            {" "}from ₹300/month where relevant, or{" "}
             <Link
               href="/gst-notice-handling"
               className="font-semibold text-blue-800 hover:underline"
