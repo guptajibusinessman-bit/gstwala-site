@@ -18,6 +18,7 @@ import {
   GST_REG_INCLUDES,
   HOME_PROCESS_STEPS,
   NIL_FILING_INCLUDES,
+  NIL_FILING_WA_MSG,
   WHY_BENEFITS,
 } from "@/lib/conversion";
 import { faqSchema, serviceSchema } from "@/lib/schema";
@@ -339,10 +340,10 @@ export default function HomePage() {
                 ))}
               </ul>
               <WhatsAppButton
-                message="Namaste, GSTwala website se aa raha hoon. Nil GST return filing ₹300/month ke baare mein jaanna hai."
+                message={NIL_FILING_WA_MSG}
                 className="mt-6 inline-flex w-full items-center justify-center rounded-2xl border-2 border-blue-900 py-3.5 text-sm font-semibold text-blue-900 hover:bg-blue-50"
               >
-                Ask About Monthly Filing
+                WhatsApp for Nil Filing
               </WhatsAppButton>
               <Link
                 href="/gst-compliance"
