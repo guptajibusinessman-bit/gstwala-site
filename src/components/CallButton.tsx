@@ -1,3 +1,6 @@
+"use client";
+
+import { track } from "@/lib/analytics";
 import { SITE } from "@/lib/site";
 
 type Props = {
@@ -12,7 +15,12 @@ export function CallButton({
   "aria-label": ariaLabel = `Call GSTwala at ${SITE.phoneDisplay}`,
 }: Props) {
   return (
-    <a href={`tel:${SITE.phone}`} className={className} aria-label={ariaLabel}>
+    <a
+      href={`tel:${SITE.phone}`}
+      className={className}
+      aria-label={ariaLabel}
+      onClick={() => track("call_click")}
+    >
       {children}
     </a>
   );

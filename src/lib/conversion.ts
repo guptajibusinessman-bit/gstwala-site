@@ -3,6 +3,9 @@
 export const GST_WA_MSG =
   "Namaste, GSTwala website se aa raha hoon. Online business ke liye GST Registration ₹999 chahiye (₹0 advance).";
 
+export const NIL_FILING_WA_MSG =
+  "Namaste, GSTwala website se aa raha hoon. Nil GST return filing ₹300/month ke baare mein jaanna hai.";
+
 export const ONLINE_PLATFORMS = [
   "Amazon",
   "Flipkart",

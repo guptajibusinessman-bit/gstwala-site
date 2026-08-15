@@ -5,7 +5,9 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { NAV_MORE_SERVICES, NAV_PRIMARY } from "@/lib/conversion";
 import { IMAGES } from "@/lib/images";
-import { SITE, whatsappUrl, DEFAULT_WHATSAPP_MSG } from "@/lib/site";
+import { SITE, DEFAULT_WHATSAPP_MSG } from "@/lib/site";
+import { CallButton } from "./CallButton";
+import { WhatsAppButton } from "./WhatsAppButton";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -105,24 +107,21 @@ export function Header() {
         </div>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <a
-            href={`tel:${SITE.phone}`}
+          <CallButton
             className="inline-flex items-center gap-1.5 rounded-xl border border-blue-200 px-3 py-2 text-sm font-semibold text-blue-800 hover:border-blue-400 hover:bg-blue-50"
             aria-label={`Call ${SITE.phoneDisplay}`}
           >
             <PhoneIcon className="h-4 w-4" />
             <span className="hidden xl:inline">Call</span>
-          </a>
-          <a
-            href={whatsappUrl(DEFAULT_WHATSAPP_MSG)}
-            target="_blank"
-            rel="noopener noreferrer"
+          </CallButton>
+          <WhatsAppButton
+            message={DEFAULT_WHATSAPP_MSG}
             className="inline-flex items-center gap-1.5 rounded-xl bg-emerald-500 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-emerald-500/20 hover:bg-emerald-600"
             aria-label="Chat on WhatsApp"
           >
             <WhatsAppIcon className="h-4 w-4" />
             WhatsApp
-          </a>
+          </WhatsAppButton>
         </div>
 
         <button
@@ -171,23 +170,18 @@ export function Header() {
             ))}
           </div>
           <div className="mt-4 grid grid-cols-2 gap-2">
-            <a
-              href={`tel:${SITE.phone}`}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 py-3 text-sm font-semibold text-blue-800"
-            >
+            <CallButton className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 py-3 text-sm font-semibold text-blue-800">
               <PhoneIcon className="h-4 w-4" />
               Call
-            </a>
-            <a
-              href={whatsappUrl(DEFAULT_WHATSAPP_MSG)}
-              target="_blank"
-              rel="noopener noreferrer"
+            </CallButton>
+            <WhatsAppButton
+              message={DEFAULT_WHATSAPP_MSG}
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 py-3 text-sm font-semibold text-white"
-              onClick={closeAllMenus}
+              aria-label="Chat on WhatsApp"
             >
               <WhatsAppIcon className="h-4 w-4" />
               WhatsApp
-            </a>
+            </WhatsAppButton>
           </div>
         </div>
       )}

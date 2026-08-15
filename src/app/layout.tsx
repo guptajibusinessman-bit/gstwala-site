@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { Footer } from "@/components/Footer";
+import { GaPageViews } from "@/components/GaPageViews";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { WhatsAppFloat } from "@/components/WhatsAppButton";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 import { localBusinessSchema } from "@/lib/schema";
 import { buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
@@ -47,6 +50,14 @@ export default function RootLayout({
   return (
     <html lang="en-IN" className={`${inter.variable} scroll-smooth`}>
       <body className="flex min-h-screen flex-col bg-white pb-20 font-sans text-gray-800 antialiased md:pb-0">
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}');`}
+        </Script>
+        <GaPageViews />
         <JsonLd data={localBusinessSchema()} />
         <Header />
         <main className="flex-1">{children}</main>

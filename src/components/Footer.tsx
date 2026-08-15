@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FOOTER_SERVICES } from "@/lib/conversion";
 import { IMAGES } from "@/lib/images";
+import { CallButton } from "./CallButton";
 import { MapEmbed } from "./MapEmbed";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { SITE } from "@/lib/site";
@@ -35,12 +36,9 @@ export function Footer() {
             <p className="mt-2 text-sm">
               GST Registration for Online Business · ₹999 · ₹0 advance
             </p>
-            <a
-              href={`tel:${SITE.phone}`}
-              className="mt-3 block text-sm font-semibold text-emerald-400 hover:text-emerald-300"
-            >
+            <CallButton className="mt-3 block text-sm font-semibold text-emerald-400 hover:text-emerald-300">
               {SITE.phoneDisplay}
-            </a>
+            </CallButton>
             <Link
               href={SITE.gmbUrl}
               target="_blank"

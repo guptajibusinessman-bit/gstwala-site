@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ServiceContent } from "@/lib/content/services";
+import { NIL_FILING_WA_MSG } from "@/lib/conversion";
 import { SERVICE_IMAGES } from "@/lib/images";
 import { SITE } from "@/lib/site";
 import {
@@ -14,9 +15,6 @@ import { FAQ } from "./FAQ";
 import { JsonLd } from "./JsonLd";
 import { ProcessSteps } from "./ProcessSteps";
 import { WhatsAppButton } from "./WhatsAppButton";
-
-const NIL_FILING_WA =
-  "Namaste, GSTwala website se aa raha hoon. Nil GST return filing ₹300/month ke baare mein jaanna hai.";
 
 const NIL_FILING_STEPS = [
   {
@@ -47,7 +45,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
   const image = SERVICE_IMAGES[service.slug];
   const isNilFiling = service.slug === "gst-compliance";
   const waMessage = isNilFiling
-    ? NIL_FILING_WA
+    ? NIL_FILING_WA_MSG
     : `Namaste, Website se aa raha hoon. ${service.title} ke baare mein jaanna hai.`;
 
   return (
