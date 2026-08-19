@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { AreaContent } from "@/lib/content/areas";
+import { GST_WA_MSG } from "@/lib/conversion";
 import { AREA_IMAGES } from "@/lib/images";
 import { SITE } from "@/lib/site";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
@@ -40,7 +41,9 @@ export function LocalPage({ area }: { area: AreaContent }) {
   const path = `/${area.slug}`;
   const url = `${SITE.baseUrl}${path}`;
   const image = AREA_IMAGES[area.slug];
-  const waMessage = `Namaste, Website se aa raha hoon. ${area.name} area mein service chahiye.`;
+  const waMessage = area.gstRegistrationCta
+    ? GST_WA_MSG
+    : `Namaste, Website se aa raha hoon. ${area.name} area mein service chahiye.`;
 
   return (
     <>
@@ -86,7 +89,9 @@ export function LocalPage({ area }: { area: AreaContent }) {
             message={waMessage}
             className="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-white hover:bg-emerald-600"
           >
-            WhatsApp pe Consult Karein – {area.name}
+            {area.gstRegistrationCta
+              ? "Get GST Registration on WhatsApp"
+              : `WhatsApp pe Consult Karein – ${area.name}`}
           </WhatsAppButton>
           <CallButton className="inline-flex items-center justify-center rounded-xl border-2 border-blue-200 px-6 py-3 font-semibold text-blue-800 hover:bg-blue-50">
             Call {SITE.phoneDisplay}
@@ -104,8 +109,85 @@ export function LocalPage({ area }: { area: AreaContent }) {
           <section key={section.heading} className="mt-10">
             <h2 className="text-2xl font-bold text-gray-900">{section.heading}</h2>
             <p className="mt-3 leading-relaxed text-gray-600">{section.content}</p>
+            {section.heading.startsWith("GST Focus") && area.sellerHubLink && (
+              <p className="mt-3 leading-relaxed text-gray-600">
+                Selling mainly on Amazon, Flipkart, Meesho or your own website? See{" "}
+                <Link
+                  href="/gst-registration-online-business"
+                  className="font-medium text-blue-800 hover:underline"
+                >
+                  GST Registration for Online Business
+                </Link>
+                .
+              </p>
+            )}
+            {section.heading.startsWith("Marketplace") && area.sellerHubLink && (
+              <p className="mt-3 leading-relaxed text-gray-600">
+                For first-time online-seller documents, home-business questions and platform context,
+                see{" "}
+                <Link
+                  href="/gst-registration-online-business"
+                  className="font-medium text-blue-800 hover:underline"
+                >
+                  GST Registration for Online Business
+                </Link>
+                .
+              </p>
+            )}
+            {section.heading.startsWith("Home-based") && area.sellerHubLink && (
+              <p className="mt-3 leading-relaxed text-gray-600">
+                If you are starting an online or home business and need GST context for that setup, see{" "}
+                <Link
+                  href="/gst-registration-online-business"
+                  className="font-medium text-blue-800 hover:underline"
+                >
+                  GST Registration for Online Business
+                </Link>
+                .
+              </p>
+            )}
+            {section.heading.startsWith("Interstate") && area.sellerHubLink && (
+              <p className="mt-3 leading-relaxed text-gray-600">
+                For GST questions when selling online from a workshop, unit or godown, see{" "}
+                <Link
+                  href="/gst-registration-online-business"
+                  className="font-medium text-blue-800 hover:underline"
+                >
+                  GST Registration for Online Business
+                </Link>
+                .
+              </p>
+            )}
+            {section.heading === "Nearby Areas" && area.nearbyLinks && area.nearbyLinks.length > 0 && (
+              <p className="mt-3 text-sm text-gray-600">
+                Nearby:{" "}
+                {area.nearbyLinks.map((n, i) => (
+                  <span key={n.href}>
+                    {i > 0 && " · "}
+                    <Link href={n.href} className="font-medium text-blue-800 hover:underline">
+                      {n.label}
+                    </Link>
+                  </span>
+                ))}
+              </p>
+            )}
           </section>
         ))}
+
+        {area.afterGstin && (
+          <section className="mt-10">
+            <h2 className="text-2xl font-bold text-gray-900">After GST Registration</h2>
+            <p className="mt-3 leading-relaxed text-gray-600">
+              After GST approval you receive your GSTIN. Monthly return filing may then apply. For
+              no activity or eligible nil activity, GSTwala offers{" "}
+              <Link href="/gst-compliance" className="font-medium text-blue-800 hover:underline">
+                Nil GST Return Filing from ₹300/month
+              </Link>
+              . Exact filing type depends on your GST profile — we do not assume every new GSTIN
+              qualifies for Nil filing.
+            </p>
+          </section>
+        )}
 
         <section className="mt-10">
           <h2 className="text-2xl font-bold text-gray-900">

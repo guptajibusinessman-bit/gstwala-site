@@ -12,6 +12,11 @@ export type AreaContent = {
   sections: { heading: string; content: string }[];
   services: string[];
   faqs: FAQ[];
+  /** Optional extras — only set on pages that need them; others stay unchanged */
+  gstRegistrationCta?: boolean;
+  sellerHubLink?: boolean;
+  afterGstin?: boolean;
+  nearbyLinks?: { href: string; label: string }[];
 };
 
 export const AREAS: Record<AreaSlug, AreaContent> = {
@@ -23,28 +28,35 @@ export const AREAS: Record<AreaSlug, AreaContent> = {
       "Patel Nagar aur Rajinder Nagar mein GST registration ₹999 – pay after approval. Company registration, trademark, FSSAI, GeM aur compliance bhi WhatsApp pe. GSTwala.",
     h1: "GST Registration in Patel Nagar & Rajinder Nagar",
     intro:
-      "Patel Nagar aur Rajinder Nagar ke shop owners, traders, professionals aur MSMEs ke liye GST registration ab simple hai – ₹999, pay after approval, documents WhatsApp pe. GSTwala (Raj GST Sewa Kendra) local businesses ko same-day process start, transparent quote aur digital certificate delivery deta hai. Office visit ki zaroorat nahi.",
+      "GST Registration in Patel Nagar, Rajinder Nagar and nearby Central Delhi is ₹999 — ₹0 advance, pay after GST approval. GSTwala (Raj GST Sewa Kendra) helps local shops, new firms and businesses that also sell online. Share documents on WhatsApp. No office visit. Same-Day Process.",
     focus: "GST Registration (₹999, Pay After Approval)",
+    gstRegistrationCta: true,
+    sellerHubLink: true,
+    afterGstin: true,
+    nearbyLinks: [
+      { href: "/karol-bagh", label: "Karol Bagh" },
+      { href: "/inderlok-shastri-nagar", label: "Inderlok & Shastri Nagar" },
+    ],
     sections: [
       {
         heading: "GST Focus – Patel Nagar & Rajinder Nagar",
         content:
-          "Naya GSTIN chahiye, composition vs regular scheme samajhna hai, ya billing start karne se pehle registration – hum guide karte hain. Application documents milte hi start hoti hai. GST plans pe zero advance / pay after approval option available hai. Full details: GST Registration page pe dekhein.",
+          "This page is for a new GSTIN in Patel Nagar and Rajinder Nagar — a new shop, a new firm, or a local business that needs GST for billing. Some clients sell only from the shop; some also sell online. We check what applies in your case, then prepare and submit the GST Registration application. ₹999, ₹0 advance, pay after approval. Full process is on the GST Registration page.",
       },
       {
         heading: "Local Problems We Solve",
         content:
-          "Busy markets, multi-location shops, online + offline sales, aur agent chase – in areas mein common hain. Wrong documents, delayed filing, hidden charges – yeh avoid karne ke liye clear checklist WhatsApp pe milti hai. East/West Patel Nagar, Rajinder Nagar, Rajendra Place nearby pockets bhi cover.",
+          "East and West Patel Nagar, Rajinder Nagar and Rajendra Place are busy commercial pockets — multi-location shops, mixed online and offline selling, and little time for office visits. Incomplete address or premises papers are a common delay. We share a practical WhatsApp checklist for your situation instead of a one-size list.",
       },
       {
         heading: "Other Services (Short)",
         content:
-          "GST ke alawa Company Registration, Trademark, FSSAI, GST Compliance (returns & notices), GeM Registration aur Loan Assistance (DPR/CMA) bhi available hain – short consult pe pehle quote, phir kaam.",
+          "If you later need company registration, trademark, FSSAI, GeM or loan documentation, ask on the same WhatsApp chat. Those are separate services. This page stays focused on GST Registration.",
       },
       {
         heading: "Nearby Areas",
         content:
-          "Hum Patel Nagar, Rajinder Nagar, Rajendra Place, Karol Bagh side, Inderlok corridor aur Central Delhi MSMEs serve karte hain – same WhatsApp process.",
+          "We also assist nearby Central Delhi stretches on the same WhatsApp GST Registration process — including Karol Bagh and the Inderlok–Shastri Nagar corridor.",
       },
     ],
     services: [
@@ -60,22 +72,27 @@ export const AREAS: Record<AreaSlug, AreaContent> = {
       {
         question: "Patel Nagar / Rajinder Nagar se GST registration kitne mein?",
         answer:
-          "GST registration plan ₹999 se start. Pay after approval option available – pehle certificate, phir payment (plan terms ke hisaab se).",
+          "GST Registration is ₹999. ₹0 advance — you pay after GST approval. Government approval is not guaranteed.",
       },
       {
         question: "Documents kya chahiye?",
         answer:
-          "Aadhaar, PAN, address proof, bank details aur photo – clear photos WhatsApp pe bhejein. Detail checklist free consultation pe milti hai.",
+          "Typically PAN, Aadhaar, photograph, address / premises proof and bank proof where applicable. The exact list depends on your shop or home setup. We confirm on WhatsApp after a document check.",
       },
       {
         question: "Office visit zaroori hai kya?",
         answer:
-          "Nahi. Patel Nagar / Rajinder Nagar dono ke clients 100% WhatsApp pe order complete kar sakte hain.",
+          "Nahi. Patel Nagar and Rajinder Nagar clients complete GST Registration on WhatsApp. No unnecessary office visit.",
       },
       {
-        question: "GST ke baad returns bhi handle karte ho?",
+        question: "Business abhi start nahi hua — GST le sakte hain?",
         answer:
-          "Haan. GST Compliance se monthly returns, reconciliation aur notice support milta hai.",
+          "Kai local businesses pehle GSTIN lete hain, phir billing or selling start karte hain. Ready hain ya nahi — documents aur plan WhatsApp pe check kar dete hain. Approval still depends on the GST department.",
+      },
+      {
+        question: "GST ke baad monthly filing kya hoti hai?",
+        answer:
+          "After GST Registration, return filing may apply. For no activity or eligible nil activity, Nil GST Return Filing from ₹300/month may be relevant — we check your profile first. It is not automatic for every new GSTIN.",
       },
     ],
   },
@@ -84,31 +101,43 @@ export const AREAS: Record<AreaSlug, AreaContent> = {
     name: "Anand Parbat & Karol Bagh",
     metaTitle: "GST Registration in Anand Parbat & Karol Bagh | ₹999",
     metaDescription:
-      "Anand Parbat aur Karol Bagh mein GST registration ₹999 – pay after approval. Industrial units, traders aur shops ke liye WhatsApp pe GST, company, trademark, GeM. GSTwala.",
-    h1: "GST Registration in Anand Parbat & Karol Bagh",
+      "Anand Parbat industrial units aur Karol Bagh wholesale ke liye GST registration ₹999 – pay after approval. Workshop, business premises aur godown billing WhatsApp pe. GSTwala.",
+    h1: "GST Registration in Anand Parbat & Karol Bagh — Units & Wholesale",
     intro:
-      "Anand Parbat industrial units aur Karol Bagh traders/retailers ke liye GST registration ₹999 – pay after approval. Factory, workshop, wholesale shop ya e-commerce – documents WhatsApp pe bhejein, filing GSTwala handle karega. Local industrial + trading belt ke hisaab se practical guidance.",
+      "GST Registration in the Anand Parbat–Karol Bagh corridor is ₹999 for Anand Parbat workshops and industrial units, and for Karol Bagh wholesale businesses. ₹0 advance, pay after GST approval. Share documents on WhatsApp. No office visit. Same-Day Process. Some units and godowns also bill interstate or sell through marketplaces — that is a secondary use of the same GSTIN, depending on the business.",
     focus: "GST Registration (₹999, Pay After Approval)",
+    gstRegistrationCta: true,
+    sellerHubLink: true,
+    afterGstin: true,
+    nearbyLinks: [
+      { href: "/karol-bagh", label: "Karol Bagh" },
+      { href: "/moti-nagar", label: "Moti Nagar" },
+    ],
     sections: [
       {
-        heading: "GST for Industrial & Trading Belt",
+        heading: "GST for workshops, units and wholesale",
         content:
-          "Anand Parbat pe fabrication/manufacturing units, Karol Bagh pe wholesale-retail – dono ko clean GSTIN, e-invoicing readiness aur input credit discipline chahiye. Hum regular/composition guidance, registration filing aur next steps clear karte hain. Main focus: GST Registration ₹999, pay after approval.",
+          "This page is for a GSTIN used in business billing on this corridor — a workshop or industrial unit on the Anand Parbat side, or a wholesale business with shop or godown operations toward Karol Bagh. Factory or business premises papers are part of the document check. Interstate supply can apply in some cases. We check what is required, then prepare and submit the GST Registration application. ₹999, ₹0 advance, pay after approval. Full process is on the GST Registration page.",
       },
       {
-        heading: "Local Angle – Anand Parbat & Karol Bagh",
+        heading: "Anand Parbat vs Karol Bagh on this corridor",
         content:
-          "Peak market hours, godown billing, interstate supply, marketplace sales – common challenges. Wrong GST type ya incomplete docs se delay hota hai. WhatsApp pe checklist + transparent quote se process smooth rehta hai. Ajmal Khan Road, industrial lanes aur nearby wholesale pockets cover.",
+          "Anand Parbat is the industrial stretch: workshops, fabrication and manufacturing units, and the business premises those units operate from. Karol Bagh on this page is the wholesale and trading side: stock, godown and billing for distribution — not the dedicated shop-and-marketplace trader page. Peak hours make an office visit a poor fit; the GST Registration process stays on WhatsApp.",
+      },
+      {
+        heading: "Interstate and marketplace from a unit or godown",
+        content:
+          "An industrial unit, wholesaler or godown may also supply customers interstate or sell through marketplaces. A GSTIN can be relevant depending on that activity — we check the case. We do not treat GST as automatic for every marketplace seller.",
       },
       {
         heading: "Other Services (Short)",
         content:
-          "Company Registration, Trademark, FSSAI, GST Compliance, GeM Registration, Loan Assistance – short packages available. Pehle free consult, phir service choose karein.",
+          "If you later need company registration, trademark, FSSAI, GeM or loan documentation, ask on the same WhatsApp chat. Those are separate services. This page stays focused on GST Registration.",
       },
       {
         heading: "Nearby Areas",
         content:
-          "Anand Parbat, Karol Bagh, Patel Nagar side, Moti Nagar / industrial corridors aur West–Central Delhi MSMEs – same remote process.",
+          "Karol Bagh shop, godown and trader GST has its own page. Moti Nagar sits on the industrial side of this West–Central Delhi belt. This page stays on industrial and wholesale GST Registration for the Anand Parbat–Karol Bagh corridor.",
       },
     ],
     services: [
@@ -122,24 +151,44 @@ export const AREAS: Record<AreaSlug, AreaContent> = {
     ],
     faqs: [
       {
-        question: "Anand Parbat factory ke liye GST registration hota hai?",
+        question: "Anand Parbat / Karol Bagh corridor se GST registration kitne mein?",
         answer:
-          "Haan. Manufacturing / workshop units ke documents WhatsApp pe leke GST registration file karte hain – ₹999 plan available.",
+          "GST Registration is ₹999. ₹0 advance — you pay after GST approval. Government approval is not guaranteed.",
       },
       {
-        question: "Karol Bagh trader ko GST zaroori hai kya?",
+        question: "Documents kya chahiye?",
         answer:
-          "Turnover threshold, interstate sale ya e-commerce pe depend karta hai. Free consult pe aapke case ke hisaab se bata denge.",
+          "Typically PAN, Aadhaar, photograph, address / premises proof for the workshop, unit, shop or godown, and bank proof where applicable. The exact list depends on the industrial or business premises. We confirm on WhatsApp after a document check.",
+      },
+      {
+        question: "Anand Parbat factory ya workshop ke liye GST registration hota hai?",
+        answer:
+          "Haan — manufacturing and workshop units routinely file GST Registration for business billing from those premises. Documents WhatsApp pe share karein. Approval still depends on the GST department.",
+      },
+      {
+        question: "Wholesale ya interstate billing ke liye GST chahiye?",
+        answer:
+          "It depends on how you sell, where you supply, and the applicable GST requirements. Many wholesale and interstate businesses register for billing. We check your case. We do not say GST is mandatory for every wholesale or interstate movement.",
+      },
+      {
+        question: "Unit ya godown se marketplace pe bhi sell karte hain — GST same hai?",
+        answer:
+          "A GSTIN used for the unit, wholesale or godown can also be relevant if you sell through marketplaces, depending on the activity. Exact need is not automatic. For first-time online-business GST questions, see our online-business GST page.",
+      },
+      {
+        question: "Office visit zaroori hai kya?",
+        answer:
+          "Nahi. Anand Parbat and Karol Bagh corridor clients complete GST Registration on WhatsApp. No unnecessary office visit.",
+      },
+      {
+        question: "GST ke baad kya hota hai?",
+        answer:
+          "After GST Registration you receive your GSTIN. Return filing may then apply. For no activity or eligible nil activity, Nil GST Return Filing from ₹300/month may be relevant — we check your profile first. Industrial or wholesale businesses do not automatically qualify for Nil filing.",
       },
       {
         question: "Pay after approval ka matlab?",
         answer:
-          "Selected GST plans pe aap certificate approval ke baad pay karte hain – pehle hidden charges nahi.",
-      },
-      {
-        question: "GeM / loan bhi milta hai in areas se?",
-        answer:
-          "Haan. GeM Registration aur Loan Assistance short packages alag se available hain.",
+          "GST Registration pe pehle se advance nahi. Aap GST approve hone ke baad ₹999 pay karte hain. Government approval is not guaranteed.",
       },
     ],
   },
@@ -148,31 +197,42 @@ export const AREAS: Record<AreaSlug, AreaContent> = {
     name: "Inderlok & Shastri Nagar",
     metaTitle: "GST Registration in Inderlok & Shastri Nagar | ₹999",
     metaDescription:
-      "Inderlok aur Shastri Nagar mein GST registration ₹999 – pay after approval. Shops, service MSMEs aur traders ke liye WhatsApp pe GST, company, trademark, FSSAI. GSTwala.",
-    h1: "GST Registration in Inderlok & Shastri Nagar",
+      "Inderlok aur Shastri Nagar mein first GST registration ₹999 – pay after approval. New shops, service businesses aur home-based setups ke liye WhatsApp pe. GSTwala.",
+    h1: "GST Registration in Inderlok & Shastri Nagar — Home & New Businesses",
     intro:
-      "Inderlok aur Shastri Nagar ke shop owners, service businesses aur local traders ke liye GST registration ₹999 – pay after approval. Metro corridor pe busy commercial stretch – office visit skip karke WhatsApp pe documents bhejein, GSTwala registration complete karega.",
+      "First GSTIN for a new shop, service business or home-based business in Inderlok and Shastri Nagar is GST Registration ₹999 — ₹0 advance, pay after approval. Share documents on WhatsApp. No office visit. Same-Day Process. Some people here also start an online or home business; that is a supporting case for the same first GSTIN, not a separate marketplace process.",
     focus: "GST Registration (₹999, Pay After Approval)",
+    gstRegistrationCta: true,
+    sellerHubLink: true,
+    afterGstin: true,
+    nearbyLinks: [
+      { href: "/patel-nagar-rajinder-nagar", label: "Patel Nagar & Rajinder Nagar" },
+    ],
     sections: [
       {
         heading: "GST Registration – Local Focus",
         content:
-          "Naya shop, expanding service business, ya online sales start – GSTIN jaldi chahiye. Hum Inderlok / Shastri Nagar clients ko simple checklist, transparent ₹999 plan aur WhatsApp-only filing dete hain. Full process GST Registration page pe bhi explained hai.",
+          "This page is for a first GST registration in Inderlok and Shastri Nagar — a new shop, a new service business, or a home-based setup that needs a GSTIN for billing. The metro corridor is a busy commercial stretch; we still work on WhatsApp instead of an office visit. We check what applies in your case, then prepare and submit the GST Registration application. ₹999, ₹0 advance, pay after approval. Full process is on the GST Registration page.",
       },
       {
-        heading: "Local Angle – Inderlok & Shastri Nagar",
+        heading: "Home and address documents",
         content:
-          "Retail counters, clinics/services, small traders aur home-based sellers common hain. Time pe billing start karna, GSTR readiness, aur agent wait avoid karna – yeh priority. Nearby Patel Nagar, Inderlok Metro belt, Shastri Nagar commercial lanes cover.",
+          "Many first GSTINs here use a residential address — own home, parents' home, or a rented premises. The papers GST needs depend on the actual address and property situation, not on a single checklist. A parents' address does not automatically qualify. We review your documents on WhatsApp and tell you what is required for that setup. Approval still depends on the GST department.",
+      },
+      {
+        heading: "Home-based and starting online from here",
+        content:
+          "Retail counters, clinics and other service businesses, small traders and home-based work are common along Inderlok Metro and Shastri Nagar commercial lanes. Someone starting an online business from home may need GST registration depending on their activity and applicable requirements — we check the case; we do not treat GST as automatic for every home or online seller.",
       },
       {
         heading: "Other Services (Short)",
         content:
-          "Company Registration, Trademark, FSSAI, GST Compliance, GeM Registration, Loan Assistance – short mein available. GST ke baad compliance ya brand protection chahiye to same WhatsApp pe batayein.",
+          "If you later need company registration, trademark, FSSAI, GeM or loan documentation, ask on the same WhatsApp chat. Those are separate services. This page stays focused on GST Registration.",
       },
       {
         heading: "Nearby Areas",
         content:
-          "Inderlok, Shastri Nagar, Patel Nagar, Anand Parbat side aur Central Delhi surrounding pockets – same digital process.",
+          "Patel Nagar sits next to this corridor. GST Registration there has its own page. This page stays on home-based and new or small-business GST in Inderlok and Shastri Nagar.",
       },
     ],
     services: [
@@ -186,19 +246,39 @@ export const AREAS: Record<AreaSlug, AreaContent> = {
     ],
     faqs: [
       {
-        question: "Inderlok se GST registration WhatsApp pe hoga?",
+        question: "Inderlok / Shastri Nagar se GST registration kitne mein?",
         answer:
-          "Haan. Documents photos bhejein – process remote complete hota hai. ₹999 plan, pay after approval option available.",
+          "GST Registration is ₹999. ₹0 advance — you pay after GST approval. Government approval is not guaranteed.",
+      },
+      {
+        question: "Documents kya chahiye?",
+        answer:
+          "Typically PAN, Aadhaar, photograph, address / premises proof and bank proof where applicable. The exact list depends on your shop or home setup. We confirm on WhatsApp after a document check.",
+      },
+      {
+        question: "Own home, parents' home ya rented address pe GST ho sakta hai?",
+        answer:
+          "Possible hai, lekin documents aapke actual address aur property situation pe depend karte hain. Parents ke ghar ka address automatically qualify nahi karta. Hum case dekh kar practical next step batate hain. Approval GST department pe depend karta hai.",
+      },
+      {
+        question: "Business abhi start nahi hua — GST le sakte hain?",
+        answer:
+          "Kai local shops, service businesses aur home setups pehle GSTIN lete hain, phir billing or selling start karte hain. Ready hain ya nahi — documents aur plan WhatsApp pe check kar dete hain. Approval still depends on the GST department.",
+      },
+      {
+        question: "Office visit zaroori hai kya?",
+        answer:
+          "Nahi. Inderlok and Shastri Nagar clients complete GST Registration on WhatsApp. No unnecessary office visit.",
       },
       {
         question: "Shastri Nagar shop ke liye kitna time?",
         answer:
-          "Documents complete hone pe application jaldi start. Government approval time portal pe depend karta hai; hum filing aur follow-up handle karte hain.",
+          "Documents complete hone pe application jaldi start. Government processing and approval time depend on the GST portal; we do not guarantee a government timeline. Hum filing aur follow-up handle karte hain.",
       },
       {
-        question: "GST ke alawa kya services hain?",
+        question: "GST ke baad monthly filing kya hoti hai?",
         answer:
-          "Company Registration, Trademark, FSSAI, monthly GST Compliance, GeM aur Loan Assistance – short packages.",
+          "After GST Registration, return filing may apply. For no activity or eligible nil activity, Nil GST Return Filing from ₹300/month may be relevant — we check your profile first. It is not automatic for every new GSTIN.",
       },
       {
         question: "Kaise start karein?",
@@ -393,32 +473,45 @@ export const AREAS: Record<AreaSlug, AreaContent> = {
   "karol-bagh": {
     slug: "karol-bagh",
     name: "Karol Bagh",
-    metaTitle: "Karol Bagh Business Services",
+    metaTitle: "GST Registration in Karol Bagh | Traders | ₹999",
     metaDescription:
-      "GST, trademark & shop registration for Karol Bagh traders & retailers. GSTwala – Delhi's compliance partner. WhatsApp-only orders. Free consultation for Karol Bagh businesses.",
-    h1: "Business Registration & Compliance in Karol Bagh",
+      "GST registration in Karol Bagh for wholesale and retail traders. ₹999, ₹0 advance, pay after approval. Shops, godowns and marketplace selling from this market. WhatsApp. GSTwala.",
+    h1: "GST Registration in Karol Bagh — For Traders & Marketplace Sellers",
     intro:
-      "Karol Bagh is one of Delhi's busiest trading corridors – electronics, garments, mobile accessories, and wholesale distribution. GSTwala specializes in trader-first compliance: GST registration at ₹999, shop establishment, trademark for brand protection, and Udyam for MSME benefits.",
-    focus: "trader/retail registration",
+      "GST Registration in Karol Bagh is ₹999 for wholesale and retail businesses — shops and godowns in this trading corridor. ₹0 advance, pay after GST approval. Share documents on WhatsApp. No office visit. Same-Day Process. Some Karol Bagh traders also use the same GSTIN for Amazon or Flipkart activity from this market — we check your case; we do not treat GST as automatic for every marketplace seller.",
+    focus: "GST Registration for Karol Bagh traders & marketplace dispatch",
+    gstRegistrationCta: true,
+    sellerHubLink: true,
+    afterGstin: true,
+    nearbyLinks: [
+      { href: "/anand-parbat-karol-bagh", label: "Anand Parbat & Karol Bagh" },
+      { href: "/patel-nagar-rajinder-nagar", label: "Patel Nagar & Rajinder Nagar" },
+    ],
     sections: [
       {
-        heading: "Services Popular in Karol Bagh",
+        heading: "GST for Karol Bagh shops, godowns and wholesale",
         content:
-          "Retail GST registration, composition scheme guidance, trademark for shop brands, GeM seller setup for traders supplying government buyers, and working capital loan documentation for inventory expansion.",
+          "Karol Bagh is a busy trading corridor — electronics, garments, mobile accessories and wholesale distribution, including Ajmal Khan Road. This page is for GST Registration at ₹999 when you need a GSTIN for shop billing, wholesale trade or interstate supply. Peak market hours are a poor time for office visits; the process is WhatsApp-led.",
       },
       {
-        heading: "Why Karol Bagh Traders Choose GSTwala",
+        heading: "Marketplace selling from Karol Bagh",
         content:
-          "We understand wholesale billing cycles, multi-state B2B supply, and marketplace GST requirements for Amazon and Flipkart sellers operating from Karol Bagh godowns. All filings via WhatsApp – no office visit during peak market hours.",
+          "A Karol Bagh trader may need GST registration for local wholesale or shop operations and may also use that GSTIN for marketplace activity such as Amazon or Flipkart from a shop or godown here. Whether GST applies still depends on how and where you sell — not on the platform name alone. We do not say every Amazon or Flipkart seller must register.",
       },
       {
-        heading: "Karol Bagh to Pan-Delhi Growth",
+        heading: "Other Services (Short)",
         content:
-          "Many Karol Bagh businesses expand to Patel Nagar warehouses or GeM government contracts. We support company registration (Pvt Ltd), trademark, and GST compliance retainer as you scale beyond sole proprietorship.",
+          "Trademark, Udyam, GeM or loan documentation can be discussed on the same WhatsApp chat if you need them later. They are separate services. This page stays on GST Registration for Karol Bagh traders.",
+      },
+      {
+        heading: "Nearby Areas",
+        content:
+          "The Anand Parbat industrial belt sits next to this market. Some Karol Bagh businesses also keep stock toward Patel Nagar. Those corridors have their own GST pages — this one is Karol Bagh shop, godown and trader GST.",
       },
     ],
     services: [
       "GST Registration ₹999",
+      "GST Compliance",
       "Trademark Registration",
       "Udyam MSME Certificate",
       "GeM Seller Registration",
@@ -426,24 +519,34 @@ export const AREAS: Record<AreaSlug, AreaContent> = {
     ],
     faqs: [
       {
-        question: "Do Karol Bagh shop owners need GST registration?",
+        question: "Do Karol Bagh traders need GST registration?",
         answer:
-          "Mandatory if turnover exceeds threshold or you sell interstate/e-commerce. Many Karol Bagh wholesalers register voluntarily for input tax credit.",
+          "It depends on your turnover, interstate supply, shop or godown setup, and how you sell. Many Karol Bagh wholesalers register for billing and input tax credit. Marketplace selling can also raise GST questions — we check your case. We do not say GST is mandatory for every e-commerce seller.",
       },
       {
-        question: "Can I register trademark for my Karol Bagh shop name?",
+        question: "I sell on Amazon or Flipkart from a Karol Bagh godown — is GST the same?",
         answer:
-          "Yes. Word mark protection prevents marketplace copycats using your established local brand name.",
+          "You may need a GSTIN for local wholesale or shop operations and may also use it for Amazon or Flipkart onboarding from this market. Exact need depends on your setup. For first-time online-seller documents and platforms, see our online-business GST page.",
       },
       {
-        question: "Is office visit required from Karol Bagh?",
+        question: "GST Registration in Karol Bagh kitne mein hai?",
         answer:
-          "No. GSTwala processes all Karol Bagh client orders 100% via WhatsApp.",
+          "GST Registration is ₹999. ₹0 advance — you pay after GST approval. Government approval is not guaranteed.",
       },
       {
-        question: "Do you serve Karol Bagh wholesale markets only?",
+        question: "Documents kya chahiye?",
         answer:
-          "We serve retail shops, distributors, and e-commerce sellers across Karol Bagh, including Ajmal Khan Road and wholesale hubs.",
+          "Typically PAN, Aadhaar, photograph, address / premises proof for the shop or godown, and bank proof where applicable. The exact list depends on your premises. We confirm on WhatsApp after a document check.",
+      },
+      {
+        question: "Office visit zaroori hai kya?",
+        answer:
+          "Nahi. Karol Bagh clients complete GST Registration on WhatsApp — useful during peak market hours.",
+      },
+      {
+        question: "GST ke baad kya hota hai?",
+        answer:
+          "After approval you receive your GSTIN. Monthly return filing may apply. For no activity or eligible nil activity, Nil GST Return Filing from ₹300/month may be relevant — we check your profile first.",
       },
     ],
   },
