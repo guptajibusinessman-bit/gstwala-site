@@ -3,9 +3,9 @@ export const SITE = {
   legalName: "Raj GST Sewa Kendra",
   tagline: "GST Registration for Online Business — ₹999, ₹0 advance",
   baseUrl: "https://gstwala.co.in",
-  phone: "+919212270108",
-  phoneDisplay: "+91 92122 70108",
-  whatsapp: "919212270108",
+  phone: "+918368402808",
+  phoneDisplay: "+91 83684 02808",
+  whatsapp: "918368402808",
   email: "info@gstwala.co.in",
   address: {
     street: "Patel Nagar",

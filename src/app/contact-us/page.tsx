@@ -13,7 +13,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "Contact GSTwala Delhi",
   description:
-    "Contact GSTwala for GST, company registration & compliance in Delhi. WhatsApp-only orders – no office visit. Call +91 92122 70108 or message us today.",
+    "Contact GSTwala for GST, company registration & compliance in Delhi. WhatsApp-only orders – no office visit. Call +91 83684 02808 or message us today.",
   path: "/contact-us",
 });
 
