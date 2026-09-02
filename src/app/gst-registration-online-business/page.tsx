@@ -535,7 +535,14 @@ export default function GstRegistrationOnlineBusinessPage() {
               back for correction: PAN, Aadhaar and premises proof must tell one clear story. A
               home-based business with the electricity bill in a parent&apos;s or landlord&apos;s
               name is not automatically rejected — missing supporting papers is what creates
-              avoidable problems.
+              avoidable problems. See{" "}
+              <Link
+                href="/gst-registration-electricity-bill-not-in-name"
+                className="font-semibold text-blue-800 hover:underline"
+              >
+                GST registration when electricity bill is not in your name
+              </Link>
+              .
             </p>
             <p className="mt-2">
               Before we submit, GSTwala checks that identity papers match the applicant, the
@@ -564,7 +571,14 @@ export default function GstRegistrationOnlineBusinessPage() {
               ))}
             </ul>
             <p className="mt-5 text-sm font-semibold text-slate-900">
-              Not sure which documents apply to your case? WhatsApp GSTwala.
+              Not sure which documents apply to your case? WhatsApp GSTwala, or read{" "}
+              <Link
+                href="/gst-registration-electricity-bill-not-in-name"
+                className="text-blue-800 hover:underline"
+              >
+                GST address proof when the electricity bill is not in your name
+              </Link>
+              .
             </p>
             <WhatsAppButton
               message="Namaste, GSTwala website se aa raha hoon. Address / electricity bill / landlord documents ke baare mein doubt hai — GST registration for online business help chahiye."
@@ -788,6 +802,15 @@ export default function GstRegistrationOnlineBusinessPage() {
               </details>
             ))}
           </div>
+          <p className="mt-6 text-center text-sm text-slate-500">
+            Electricity bill not in your name?{" "}
+            <Link
+              href="/gst-registration-electricity-bill-not-in-name"
+              className="font-semibold text-blue-800 hover:underline"
+            >
+              GST address proof guide
+            </Link>
+          </p>
         </div>
       </section>
 

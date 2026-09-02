@@ -227,6 +227,13 @@ export default function HomePage() {
             >
               GST for Online Sellers
             </Link>
+            . Electricity bill not in your name? See{" "}
+            <Link
+              href="/gst-registration-electricity-bill-not-in-name"
+              className="font-semibold text-blue-800 hover:underline"
+            >
+              GST address proof
+            </Link>
             .
           </p>
           <div className="mt-7 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-6 text-center">

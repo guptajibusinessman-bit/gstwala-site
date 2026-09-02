@@ -129,7 +129,11 @@ const FAQS: {
   {
     question: "Can I register from a home address?",
     answer:
-      "Often possible, including when you work from home. Address and premises proof requirements depend on ownership, tenancy and supporting documents. Parents’ property or bills not in your name are common situations — we guide case by case.",
+      "Often possible, including when you work from home. Address and premises proof requirements depend on ownership, tenancy and supporting documents. Parents’ property or bills not in your name are common situations — we guide case by case. See GST registration when electricity bill is not in your name.",
+    answerLink: {
+      href: "/gst-registration-electricity-bill-not-in-name",
+      phrase: "GST registration when electricity bill is not in your name",
+    },
   },
   {
     question: "What documents are required?",
@@ -343,7 +347,14 @@ export default function GstRegistrationPage() {
           </ul>
           <p className="mx-auto mt-4 max-w-xl text-center text-xs text-slate-500">
             Bank proof where applicable · Constitution documents where applicable · Exact list
-            confirmed after document check
+            confirmed after document check. Electricity bill not in your name? See{" "}
+            <Link
+              href="/gst-registration-electricity-bill-not-in-name"
+              className="font-semibold text-blue-800 hover:underline"
+            >
+              GST address proof when the bill is not in your name
+            </Link>
+            .
           </p>
         </div>
       </section>
@@ -531,6 +542,13 @@ export default function GstRegistrationPage() {
               className="font-semibold text-blue-800 hover:underline"
             >
               Online business GST FAQ
+            </Link>
+            {" · "}
+            <Link
+              href="/gst-registration-electricity-bill-not-in-name"
+              className="font-semibold text-blue-800 hover:underline"
+            >
+              Electricity bill not in your name
             </Link>
             {" · "}
             <Link href="/gst-compliance" className="font-semibold text-blue-800 hover:underline">
