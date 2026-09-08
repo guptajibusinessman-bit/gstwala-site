@@ -44,9 +44,12 @@ export function ServicePage({ service }: { service: ServiceContent }) {
   const url = `${SITE.baseUrl}${path}`;
   const image = SERVICE_IMAGES[service.slug];
   const isNilFiling = service.slug === "gst-compliance";
+  const isUdyam = service.slug === "udyam-registration";
   const waMessage = isNilFiling
     ? NIL_FILING_WA_MSG
-    : `Namaste, Website se aa raha hoon. ${service.title} ke baare mein jaanna hai.`;
+    : isUdyam
+      ? "Namaste, GSTwala website se aa raha hoon. Udyam Registration ₹599/- chahiye."
+      : `Namaste, Website se aa raha hoon. ${service.title} ke baare mein jaanna hai.`;
 
   return (
     <>
@@ -91,6 +94,12 @@ export function ServicePage({ service }: { service: ServiceContent }) {
         <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
           {service.h1}
         </h1>
+        {isNilFiling && (
+          <p className="mt-4 rounded-xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-base font-semibold leading-relaxed text-slate-800">
+            Nil GST Return Filing — ₹300/month. For eligible businesses with no or low activity.
+            This is not every type of GST return.
+          </p>
+        )}
         <p className="mt-4 text-lg leading-relaxed text-gray-600">{service.intro}</p>
 
         {isNilFiling && (
@@ -99,7 +108,16 @@ export function ServicePage({ service }: { service: ServiceContent }) {
             <Link href="/gst-registration" className="font-medium text-blue-800 hover:underline">
               GST Registration ₹999
             </Link>
-            . This page is for monthly filing after you already have GSTIN.
+            . This page is for Nil filing after you already have a GSTIN.
+          </p>
+        )}
+        {isUdyam && (
+          <p className="mt-4 text-base leading-relaxed text-gray-600">
+            Need a GSTIN as well? See{" "}
+            <Link href="/gst-registration" className="font-medium text-blue-800 hover:underline">
+              GST Registration ₹999
+            </Link>
+            . GST registration is a separate service from Udyam ₹599/-.
           </p>
         )}
 
@@ -114,7 +132,11 @@ export function ServicePage({ service }: { service: ServiceContent }) {
             message={waMessage}
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-white hover:bg-emerald-600"
           >
-            {isNilFiling ? "Start Nil GST Filing — ₹300/month" : "Free Consultation on WhatsApp"}
+            {isNilFiling
+              ? "Start Nil GST Filing — ₹300/month"
+              : isUdyam
+                ? "Udyam Registration — ₹599/-"
+                : "Free Consultation on WhatsApp"}
           </WhatsAppButton>
           <CallButton className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-blue-200 px-6 py-3 font-semibold text-blue-800 hover:bg-blue-50">
             Call {SITE.phoneDisplay}
@@ -155,8 +177,12 @@ export function ServicePage({ service }: { service: ServiceContent }) {
           <ProcessSteps
             compact
             className="mt-10"
-            title="Is service ka process"
-            subtitle="4 steps – free consultation se delivery tak, WhatsApp pe."
+            title={isUdyam ? "How Udyam registration works" : "Is service ka process"}
+            subtitle={
+              isUdyam
+                ? "WhatsApp pe documents share karein. Service fee ₹599/-."
+                : "4 steps – free consultation se delivery tak, WhatsApp pe."
+            }
           />
         )}
 
@@ -178,14 +204,20 @@ export function ServicePage({ service }: { service: ServiceContent }) {
           <p className="mx-auto mt-2 max-w-lg text-sm text-blue-100 sm:text-base">
             {isNilFiling
               ? "Nil GST Return Filing from ₹300/month · WhatsApp your GSTIN · We check before filing"
-              : "Free consultation · Transparent quote pehle · Documents WhatsApp pe · Digital delivery"}
+              : isUdyam
+                ? "Udyam Registration ₹599/- · WhatsApp process · Office in Patel Nagar, Delhi"
+                : "Free consultation · Transparent quote pehle · Documents WhatsApp pe · Digital delivery"}
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <WhatsAppButton
               message={waMessage}
               className="inline-flex w-full items-center justify-center rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-white hover:bg-emerald-400 sm:w-auto"
             >
-              {isNilFiling ? "Start Nil GST Filing — ₹300/month" : "WhatsApp pe message karein"}
+              {isNilFiling
+                ? "Start Nil GST Filing — ₹300/month"
+                : isUdyam
+                  ? "Udyam Registration — ₹599/-"
+                  : "WhatsApp pe message karein"}
             </WhatsAppButton>
             <CallButton className="inline-flex w-full items-center justify-center rounded-xl border border-white/40 bg-white/10 px-6 py-3 font-semibold text-white hover:bg-white/20 sm:w-auto">
               Call now

@@ -180,7 +180,7 @@ export const SERVICES: Record<ServiceSlug, ServiceContent> = {
       "Nil GST Return Filing from ₹300/month. For customers who already have a GSTIN and eligible no/low activity. WhatsApp your GSTIN — GSTwala checks before filing. Broader GST return filing discussed case by case.",
     h1: "Nil GST Return Filing — ₹300/month",
     intro:
-      "Already have a GSTIN, or just received one? GSTwala files Nil GST returns for eligible no-activity or eligible low-activity periods. WhatsApp your GSTIN — we check whether Nil filing applies before we file. ₹300/month is for Nil GST Return Filing, not every type of GST return.",
+      "Nil GST Return Filing — ₹300/month. For eligible businesses with no or low GST activity in the period. This is not every type of GST return. WhatsApp your GSTIN — we check whether Nil filing applies before we file.",
     pricing: "Nil GST Return Filing from ₹300/month",
     isPillar: true,
     sections: [
@@ -341,30 +341,40 @@ export const SERVICES: Record<ServiceSlug, ServiceContent> = {
   "udyam-registration": {
     slug: "udyam-registration",
     title: "Udyam Registration",
-    metaTitle: "Udyam Registration Delhi",
+    metaTitle: "Udyam Registration in Delhi | WhatsApp Filing",
     metaDescription:
-      "Get your Udyam MSME certificate in Delhi with GSTwala. Unlock govt subsidies, tender benefits & bank schemes. WhatsApp-only process – register your MSME today.",
-    h1: "Udyam Registration in Delhi – MSME Certificate",
+      "Udyam registration in Delhi via WhatsApp. MSME certificate with GSTwala. Service fee ₹599/-. Office in Patel Nagar; sellers across India can apply.",
+    h1: "Udyam Registration in Delhi",
     intro:
-      "Udyam registration unlocks priority sector lending, GeM benefits, and subsidy schemes. GSTwala registers micro, small, and medium enterprises across Delhi NCR via WhatsApp in under 24 hours.",
-    pricing: "Fast filing · Free consultation",
+      "MSME certificate via WhatsApp. Office in Patel Nagar, Delhi — sellers across India can apply. GSTwala’s Udyam registration fee is ₹599/-.",
+    pricing: "₹599/-",
     sections: [
       {
-        heading: "Benefits of Udyam for Delhi MSMEs",
+        heading: "Who Udyam is for",
         content:
-          "Collateral-free loans under CGTMSE, lower interest rates, tender participation preference, and trademark fee concessions. Essential after company registration for formal MSME status.",
+          "Udyam is the MSME registration for micro, small and medium enterprises. Proprietors, partnerships and companies with a valid Aadhaar and PAN can apply. Classification depends on investment and turnover. We select NIC codes to match the actual activity.",
       },
       {
-        heading: "Eligibility & Classification",
+        heading: "Documents usually needed",
         content:
-          "Classification by investment and turnover – micro, small, or medium. We assess your figures and file accurate NIC codes matching your actual business activity.",
+          "Typically Aadhaar, PAN, and basic business details (activity, address, bank). If you already have GSTIN, share it so PAN/GST can be validated. The exact list is confirmed on WhatsApp after we see your case.",
+      },
+      {
+        heading: "Benefits of Udyam",
+        content:
+          "Udyam can support MSME lending schemes, tender preference, and some fee concessions. It does not replace GST registration. If you still need a GSTIN, see GST Registration ₹999 (linked below).",
       },
     ],
     faqs: [
       {
-        question: "Is Udyam registration free on government portal?",
+        question: "How much does GSTwala charge for Udyam registration?",
         answer:
-          "Government filing is free, but businesses use GSTwala for correct NIC code selection, Aadhaar OTP assistance, and linked GST/PAN validation – avoiding rejection.",
+          "GSTwala’s Udyam registration fee is ₹599/-. Government portal filing itself is free; the ₹599/- is GSTwala’s service charge for assistance and filing support.",
+      },
+      {
+        question: "Is Udyam registration free on the government portal?",
+        answer:
+          "Yes, government filing is free. GSTwala’s service fee is ₹599/- for NIC code selection, Aadhaar OTP assistance, and linked GST/PAN validation.",
       },
       {
         question: "Can proprietors apply for Udyam?",
@@ -377,14 +387,19 @@ export const SERVICES: Record<ServiceSlug, ServiceContent> = {
           "No expiry, but update turnover/investment when crossing classification limits.",
       },
       {
+        question: "Do I need GST before Udyam?",
+        answer:
+          "Not always. Many first-time sellers get GSTIN first. If you need GST registration, GSTwala’s GST Registration is ₹999 (separate from Udyam ₹599/-).",
+      },
+      {
         question: "Do I need Udyam before applying for a bank loan?",
         answer:
-          "Most MSME loan schemes require Udyam. We often register Udyam before DPR and loan assistance packages.",
+          "Most MSME loan schemes require Udyam. We often register Udyam and prepare loan documents in parallel via WhatsApp.",
       },
     ],
     related: [
+      { slug: "gst-registration", label: "GST Registration ₹999" },
       { slug: "company-registration", label: "Company Registration" },
-      { slug: "trademark", label: "Trademark Registration" },
       { slug: "loan-assistance", label: "MSME Loan Assistance" },
     ],
   },

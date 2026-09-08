@@ -193,14 +193,19 @@ export const HOME_FAQS: { question: string; answer: string }[] = [
 /** Nav – GST-first (used by Header) */
 export const NAV_PRIMARY = [
   { href: "/gst-registration", label: "GST @ ₹999" },
-  { href: "/gst-compliance", label: "Return Filing" },
+  { href: "/gst-compliance", label: "Nil Filing" },
   { href: "/gst-notice-handling", label: "GST Notice" },
   { href: "/contact-us", label: "Contact" },
 ] as const;
 
 export const NAV_MORE_SERVICES = [
   { href: "/gst-registration", label: "GST Registration" },
-  { href: "/gst-compliance", label: "GST Return Filing" },
+  { href: "/gst-registration-online-business", label: "GST for Online Sellers" },
+  {
+    href: "/gst-registration-electricity-bill-not-in-name",
+    label: "Electricity Bill Not in Your Name",
+  },
+  { href: "/gst-compliance", label: "Nil Filing" },
   { href: "/gst-notice-handling", label: "GST Notice Assistance" },
   { href: "/udyam-registration", label: "Udyam Registration" },
   { href: "/company-registration", label: "Company Registration" },
@@ -209,9 +214,14 @@ export const NAV_MORE_SERVICES = [
 
 export const FOOTER_SERVICES = [
   { href: "/gst-registration", label: "GST Registration @ ₹999" },
-  { href: "/gst-compliance", label: "GST Return Filing" },
+  { href: "/gst-registration-online-business", label: "GST for Online Sellers" },
+  {
+    href: "/gst-registration-electricity-bill-not-in-name",
+    label: "Electricity Bill Not in Your Name",
+  },
+  { href: "/gst-compliance", label: "Nil Filing" },
   { href: "/gst-notice-handling", label: "GST Notice Assistance" },
-  { href: "/udyam-registration", label: "Udyam Registration" },
+  { href: "/udyam-registration", label: "Udyam Registration ₹599/-" },
   { href: "/company-registration", label: "Company Registration" },
   { href: "/contact-us", label: "Contact / WhatsApp" },
 ] as const;

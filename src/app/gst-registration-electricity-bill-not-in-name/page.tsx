@@ -14,9 +14,9 @@ const WA = ELECTRICITY_BILL_WA_MSG;
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: "GST Registration When Electricity Bill Is Not in Your Name",
+    title: "Electricity Bill Not in Your Name? GST Registration ₹999",
     description:
-      "Electricity bill is not in your name? Learn which address documents may work for GST registration and get your case checked on WhatsApp. GST registration ₹999, ₹0 advance.",
+      "Electricity bill is not in your name? Check which address documents may work for GST registration on WhatsApp. GST registration ₹999, ₹0 advance.",
     path: PAGE_PATH,
   }),
   keywords: [
@@ -211,7 +211,19 @@ export default function ElectricityBillNotInNamePage() {
             </p>
             <p>
               What works depends on the principal place of business and the supporting documents
-              available. The GST Department makes the final decision.
+              available. The GST Department makes the final decision. For the full ₹999
+              registration process, see{" "}
+              <Link href="/gst-registration" className="font-semibold text-blue-800 hover:underline">
+                GST Registration
+              </Link>
+              . Online sellers:{" "}
+              <Link
+                href="/gst-registration-online-business"
+                className="font-semibold text-blue-800 hover:underline"
+              >
+                GST registration for online business
+              </Link>
+              .
             </p>
           </div>
         </div>
