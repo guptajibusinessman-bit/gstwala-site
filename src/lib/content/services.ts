@@ -341,9 +341,9 @@ export const SERVICES: Record<ServiceSlug, ServiceContent> = {
   "udyam-registration": {
     slug: "udyam-registration",
     title: "Udyam Registration",
-    metaTitle: "Udyam Registration in Delhi | WhatsApp Filing",
+    metaTitle: "Udyam Registration in Delhi | ₹599",
     metaDescription:
-      "Udyam registration in Delhi via WhatsApp. MSME certificate with GSTwala. Service fee ₹599/-. Office in Patel Nagar; sellers across India can apply.",
+      "Udyam Registration in Delhi (MSME) via WhatsApp. GSTwala service fee ₹599/-. Office in Patel Nagar. Assistance available beyond Delhi. Not a guaranteed approval.",
     h1: "Udyam Registration in Delhi",
     intro:
       "MSME certificate via WhatsApp. Office in Patel Nagar, Delhi — sellers across India can apply. GSTwala’s Udyam registration fee is ₹599/-.",

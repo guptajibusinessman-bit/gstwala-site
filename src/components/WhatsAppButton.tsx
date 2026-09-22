@@ -2,7 +2,12 @@
 
 import { usePathname } from "next/navigation";
 import { classifyWhatsAppOffer, track } from "@/lib/analytics";
-import { ELECTRICITY_BILL_WA_MSG, GST_WA_MSG, NIL_FILING_WA_MSG } from "@/lib/conversion";
+import {
+  ELECTRICITY_BILL_WA_MSG,
+  GST_WA_MSG,
+  NIL_FILING_WA_MSG,
+  UDYAM_WA_MSG,
+} from "@/lib/conversion";
 import { DEFAULT_WHATSAPP_MSG, whatsappUrl } from "@/lib/site";
 
 type Props = {
@@ -41,6 +46,10 @@ const FLOAT_BY_PATH: Record<string, { message: string; label: string }> = {
   "/gst-registration-electricity-bill-not-in-name": {
     message: ELECTRICITY_BILL_WA_MSG,
     label: "Check My Documents on WhatsApp →",
+  },
+  "/udyam-registration": {
+    message: UDYAM_WA_MSG,
+    label: "Udyam Registration — ₹599/-",
   },
 };
 

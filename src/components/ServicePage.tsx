@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ServiceContent } from "@/lib/content/services";
-import { NIL_FILING_WA_MSG } from "@/lib/conversion";
+import { NIL_FILING_WA_MSG, UDYAM_WA_MSG } from "@/lib/conversion";
 import { SERVICE_IMAGES } from "@/lib/images";
 import { SITE } from "@/lib/site";
 import {
@@ -48,7 +48,7 @@ export function ServicePage({ service }: { service: ServiceContent }) {
   const waMessage = isNilFiling
     ? NIL_FILING_WA_MSG
     : isUdyam
-      ? "Namaste, GSTwala website se aa raha hoon. Udyam Registration ₹599/- chahiye."
+      ? UDYAM_WA_MSG
       : `Namaste, Website se aa raha hoon. ${service.title} ke baare mein jaanna hai.`;
 
   return (
