@@ -14,9 +14,9 @@ const WA = ELECTRICITY_BILL_WA_MSG;
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: "Electricity Bill Not in Your Name? GST Registration ₹999",
+    title: "Electricity Bill Not in Your Name? GST ₹999",
     description:
-      "Electricity bill is not in your name? Check which address documents may work for GST registration on WhatsApp. GST registration ₹999, ₹0 advance.",
+      "Electricity bill not in your name? GST registration may still be possible. Check address documents on WhatsApp. ₹999, ₹0 advance. Pay after GST approval.",
     path: PAGE_PATH,
   }),
   keywords: [
@@ -185,6 +185,9 @@ export default function ElectricityBillNotInNamePage() {
             Electricity bill आपके नाम पर नहीं है? GST registration फिर भी possible हो सकता है. The
             required address documents depend on whose property it is and what documents are
             available.
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm font-semibold text-slate-800">
+            GST registration ₹999 · ₹0 advance · Pay after GST approval
           </p>
           <div className="mt-6 flex flex-col items-stretch justify-center gap-2.5 sm:flex-row sm:items-center">
             <WhatsAppButton
