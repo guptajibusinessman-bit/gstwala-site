@@ -9,10 +9,19 @@ function gtag(): GtagFn | undefined {
   return (window as Window & { gtag?: GtagFn }).gtag;
 }
 
+/** Current page for lead attribution. Does not include message text or personal data. */
+export function pageAnalyticsParams(): Record<string, string> {
+  if (typeof window === "undefined") return {};
+  return {
+    page_location: window.location.href,
+    page_path: `${window.location.pathname}${window.location.search}`,
+  };
+}
+
 export function track(name: string, params?: Record<string, string>) {
   const send = gtag();
   if (!send) return;
-  send("event", name, params);
+  send("event", name, { ...pageAnalyticsParams(), ...params });
 }
 
 export function trackPageView(pagePath: string) {

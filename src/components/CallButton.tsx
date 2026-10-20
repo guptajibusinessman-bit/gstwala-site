@@ -19,7 +19,11 @@ export function CallButton({
       href={`tel:${SITE.phone}`}
       className={className}
       aria-label={ariaLabel}
-      onClick={() => track("call_click")}
+      onClick={() =>
+        track("call_click", {
+          link_url: `tel:${SITE.phone}`,
+        })
+      }
     >
       {children}
     </a>

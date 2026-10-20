@@ -8,7 +8,7 @@ import {
   NIL_FILING_WA_MSG,
   UDYAM_WA_MSG,
 } from "@/lib/conversion";
-import { DEFAULT_WHATSAPP_MSG, whatsappUrl } from "@/lib/site";
+import { DEFAULT_WHATSAPP_MSG, SITE, whatsappUrl } from "@/lib/site";
 
 type Props = {
   message?: string;
@@ -30,7 +30,12 @@ export function WhatsAppButton({
       rel="noopener noreferrer"
       className={className}
       aria-label={ariaLabel}
-      onClick={() => track("whatsapp_click", { offer: classifyWhatsAppOffer(message) })}
+      onClick={() =>
+        track("whatsapp_click", {
+          offer: classifyWhatsAppOffer(message),
+          link_url: `https://wa.me/${SITE.whatsapp}`,
+        })
+      }
     >
       {children}
     </a>
