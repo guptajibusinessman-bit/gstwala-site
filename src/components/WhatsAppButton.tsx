@@ -23,19 +23,30 @@ export function WhatsAppButton({
   children,
   "aria-label": ariaLabel,
 }: Props) {
+  const href = whatsappUrl(message);
+
+  function recordClick() {
+    try {
+      track("whatsapp_click", {
+        offer: classifyWhatsAppOffer(message),
+        link_url: `https://wa.me/${SITE.whatsapp}`,
+      });
+    } catch {
+      // Analytics must not block the WhatsApp link.
+    }
+  }
+
   return (
     <a
-      href={whatsappUrl(message)}
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       className={className}
       aria-label={ariaLabel}
-      onClick={() =>
-        track("whatsapp_click", {
-          offer: classifyWhatsAppOffer(message),
-          link_url: `https://wa.me/${SITE.whatsapp}`,
-        })
-      }
+      onPointerDown={recordClick}
+      onKeyDown={(event) => {
+        if (event.key === "Enter") recordClick();
+      }}
     >
       {children}
     </a>

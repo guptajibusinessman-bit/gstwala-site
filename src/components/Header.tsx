@@ -38,9 +38,9 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 shadow-sm shadow-slate-900/5 backdrop-blur-md">
+    <header className="pointer-events-none sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 shadow-sm shadow-slate-900/5 backdrop-blur-md">
       <nav
-        className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8"
+        className="pointer-events-auto mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8"
         aria-label="Main"
       >
         <Link
@@ -143,7 +143,7 @@ export function Header() {
       </nav>
 
       {open && (
-        <div id="mobile-nav" className="border-t border-gray-100 bg-white px-4 py-4 lg:hidden">
+        <div id="mobile-nav" className="pointer-events-auto border-t border-gray-100 bg-white px-4 py-4 lg:hidden">
           <div className="flex flex-col gap-1">
             {NAV_PRIMARY.map((item) => (
               <Link
