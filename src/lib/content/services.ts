@@ -217,7 +217,7 @@ export const SERVICES: Record<ServiceSlug, ServiceContent> = {
       {
         heading: "After GST registration",
         content:
-          "Registration gets you a GSTIN. Filing is what comes next. After GST registration, an online seller may still need ongoing GST return compliance even when there is little or no activity. Exact filing type depends on your GST profile. Use the related links below for a new GSTIN or for online-seller registration questions.",
+          "Registration gets you a GSTIN. Filing is what comes next. After GST registration, an online seller may still need ongoing GST return compliance even when there is little or no activity. Exact filing type depends on your GST profile. Use the related links below for a new GSTIN, for online-seller registration, or if the electricity bill was not in your name.",
       },
       {
         heading: "Other GST support",
@@ -280,6 +280,10 @@ export const SERVICES: Record<ServiceSlug, ServiceContent> = {
     related: [
       { slug: "gst-registration", label: "New GST Registration ₹999" },
       { href: "/gst-registration-online-business", label: "GST Registration for Online Sellers" },
+      {
+        href: "/gst-registration-electricity-bill-not-in-name",
+        label: "GST registration when the electricity bill is not in your name",
+      },
       { slug: "gst-notice-handling", label: "GST Notice Handling" },
     ],
   },

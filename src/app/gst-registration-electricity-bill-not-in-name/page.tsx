@@ -406,7 +406,12 @@ export default function ElectricityBillNotInNamePage() {
           </ol>
           <p className="mx-auto mt-5 max-w-xl text-center text-sm text-slate-600">
             After approval, pay ₹999. If rejected, GSTwala will re-apply without additional service
-            charge, subject to correcting required issues/documents.
+            charge, subject to correcting required issues/documents. Once you have a GSTIN, a quiet
+            month may need{" "}
+            <Link href="/gst-compliance" className="font-semibold text-blue-800 hover:underline">
+              Nil GST return filing
+            </Link>
+            .
           </p>
         </div>
       </section>
