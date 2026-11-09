@@ -14,9 +14,9 @@ const WA = ELECTRICITY_BILL_WA_MSG;
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: "Electricity Bill Not in Your Name? GST ₹999",
+    title: "Electricity Bill for GST Registration | ₹999",
     description:
-      "Electricity bill not in your name? GST registration may still be possible. Check address documents on WhatsApp. ₹999, ₹0 advance. Pay after GST approval.",
+      "Is an electricity bill mandatory for GST registration? A utility bill can be used, including when it is not in your name. GST ₹999, ₹0 advance.",
     path: PAGE_PATH,
   }),
   keywords: [
@@ -89,6 +89,21 @@ const PROCESS = [
 ] as const;
 
 const PAGE_FAQS: { question: string; answer: string }[] = [
+  {
+    question: "Is an electricity bill mandatory for GST registration?",
+    answer:
+      "An electricity bill is one address document that is commonly accepted. It is not the only paper that can support the principal place of business, and it is not required in every case. The GST Department decides which documents fit that premises.",
+  },
+  {
+    question: "Can I use a utility bill for GST registration?",
+    answer:
+      "A utility bill, such as an electricity bill, is commonly used as address proof. It can still be used when it is not in the applicant’s own name, together with the other papers that fit the premises, such as consent/NOC, ownership proof, or a rent agreement.",
+  },
+  {
+    question: "Can I get GST registration without an electricity bill?",
+    answer:
+      "Often yes, if another acceptable address document is available for the principal place of business. That may be ownership proof, a rent or lease paper, or another utility bill, depending on the premises. Send what you have on WhatsApp before filing. Approval is not guaranteed.",
+  },
   {
     question: "Can I get GST registration if the electricity bill is not in my name?",
     answer:
@@ -227,6 +242,44 @@ export default function ElectricityBillNotInNamePage() {
                 GST registration for online business
               </Link>
               .
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-slate-100 bg-white py-10 sm:py-12">
+        <div className="mx-auto max-w-3xl space-y-10 px-4 sm:px-6 lg:px-8">
+          <div>
+            <h2 id="mandatory" className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
+              Is an Electricity Bill Mandatory for GST Registration?
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              An electricity bill is a common address document for the principal place of business.
+              It is not mandatory in every application, and it is not enough by itself in every
+              case. What is accepted depends on the premises and the other papers available. The
+              GST Department makes the final decision.
+            </p>
+          </div>
+          <div>
+            <h2 id="utility-bill" className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
+              Utility Bill for GST Registration
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              An electricity bill is the utility bill most often discussed for GST address proof.
+              Another utility bill may also be relevant, depending on the premises. A bill in a
+              parent’s, family member’s, or landlord’s name is a common situation and is reviewed
+              with consent/NOC, ownership proof, or rent papers where those apply.
+            </p>
+          </div>
+          <div>
+            <h2 id="without-bill" className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
+              GST Registration Without an Electricity Bill
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              Registration without an electricity bill is often possible when another address
+              document supports the principal place of business. Examples include ownership or
+              property papers, a rent or lease agreement, or a different utility bill. Send the
+              documents you already have on WhatsApp so they can be checked before filing.
             </p>
           </div>
         </div>
