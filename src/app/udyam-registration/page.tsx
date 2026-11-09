@@ -15,9 +15,9 @@ const WA = UDYAM_WA_MSG;
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: "Udyam Registration in Delhi | ₹599",
+    title: "Udyam Registration Delhi | Assistance Fee ₹599",
     description:
-      "Udyam Registration in Delhi (MSME) via WhatsApp. GSTwala service fee ₹599/-. Office in Patel Nagar. Assistance available beyond Delhi. Not a guaranteed approval.",
+      "Government Udyam registration is free. ₹599 is GSTwala’s professional assistance fee in Delhi, not a government fee. WhatsApp help from Patel Nagar.",
     path: PAGE_PATH,
   }),
   keywords: [
@@ -87,7 +87,7 @@ const PROCESS = [
   {
     step: "04",
     title: "Certificate",
-    text: "After successful registration, the Udyam certificate is shared with you.",
+    text: "After the portal approves the application, the Udyam registration certificate is shared with you.",
   },
 ] as const;
 
@@ -134,6 +134,26 @@ const PAGE_FAQS: { question: string; answer: string }[] = [
     answer:
       "Message on WhatsApp with your Aadhaar, PAN and a short note on your business activity. We check what is needed and assist with filing. Approval is decided on the government portal — we do not guarantee a result or a fixed time.",
   },
+  {
+    question: "Is Udyam Registration free?",
+    answer:
+      "Registration on the official government portal has no government fee. GSTwala charges ₹599/- for professional assistance with the application. That amount is not a government registration fee, and GSTwala is not a government department. The portal decides the result. Approval is not guaranteed.",
+  },
+  {
+    question: "What are the charges for Udyam Registration in Delhi?",
+    answer:
+      "Government portal filing is free. GSTwala’s professional assistance fee in Delhi is ₹599/-. It covers help preparing and filing the application. It is not a government charge, and it is separate from GST Registration ₹999.",
+  },
+  {
+    question: "Can a proprietorship apply for Udyam Registration?",
+    answer:
+      "A proprietorship with valid Aadhaar and PAN can apply when the business fits MSME classification by investment and turnover. Classification is not automatic. We check the activity, including for a Delhi shop or home business, before filing.",
+  },
+  {
+    question: "Can I get Udyam Registration online in Delhi?",
+    answer:
+      "Yes. Share details and document photos on WhatsApp. GSTwala is based in Patel Nagar, Delhi, and assists applicants online, including outside Delhi. An office visit is not required for a typical case. The Udyam certificate is issued on the government portal, not by GSTwala, and approval is not guaranteed.",
+  },
 ];
 
 export default function UdyamRegistrationPage() {
@@ -177,7 +197,8 @@ export default function UdyamRegistrationPage() {
               Udyam Registration in Delhi
             </h1>
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg lg:mx-0">
-              Udyam/MSME registration assistance by GSTwala.co.in
+              Udyam and MSME registration assistance in Delhi from GSTwala. A completed
+              application can result in an Udyam certificate issued on the government portal.
             </p>
             <p className="mt-2 text-sm font-medium text-slate-500">
               Online assistance available across India.
@@ -231,10 +252,10 @@ export default function UdyamRegistrationPage() {
               turnover, and issues an Udyam / MSME certificate.
             </p>
             <p>
-              Small-business owners in Delhi and elsewhere use it as MSME proof for schemes,
-              tenders or banks that ask for it. It is separate from GST Registration. GSTwala
-              assists with Udyam Registration in Delhi via WhatsApp; we do not operate the
-              government portal.
+              Small-business owners in Delhi and elsewhere use the Udyam registration certificate
+              as MSME proof for schemes, tenders or banks that ask for it. It is separate from
+              GST Registration. GSTwala assists with Udyam Registration in Delhi via WhatsApp; we
+              do not operate the government portal.
             </p>
           </div>
         </div>
@@ -249,8 +270,9 @@ export default function UdyamRegistrationPage() {
             Who can consider Udyam Registration?
           </h2>
           <p className="mt-3 max-w-2xl text-sm text-slate-600">
-            These are common examples — not a legal requirement list. Eligibility depends on MSME
-            classification.
+            Delhi proprietorships, shops, and small manufacturers often ask about MSME
+            registration. These are common examples — not a legal requirement list. Eligibility
+            depends on MSME classification.
           </p>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {WHO.map((item) => (
@@ -319,6 +341,26 @@ export default function UdyamRegistrationPage() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="border-b border-slate-100 bg-white py-10 sm:py-12" aria-labelledby="charges">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 id="charges" className="text-2xl font-extrabold text-slate-900 sm:text-3xl">
+            Udyam Registration Charges in Delhi – Is It Free?
+          </h2>
+          <div className="mt-4 space-y-3 text-base leading-relaxed text-slate-600">
+            <p>
+              Registration through the official government Udyam portal is free. There is no
+              government registration fee for filing on that portal.
+            </p>
+            <p>
+              GSTwala charges ₹599/- for professional assistance in Delhi: checking your details
+              and helping file the application on WhatsApp. GSTwala is not a government
+              department. ₹599/- is not a government registration fee, and it is not GST
+              Registration ₹999. The portal decides the outcome. Approval is not guaranteed.
+            </p>
+          </div>
         </div>
       </section>
 
